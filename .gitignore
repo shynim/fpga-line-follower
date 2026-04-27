@@ -1,0 +1,24 @@
+# Ignore build directories
+impl/
+build/
+
+# Ignore generated bitstream, routing files and object files
+*.fs
+*.bit
+*.bin
+*.rbt
+*.o
+
+# Ignore simulation waveform files
+*.vcd
+*.ghw
+
+# Ignore OS-specific hidden files
+.DS_Store
+Thumbs.db
+
+# Ignore specific files from the project root
+__module_export.json
+fpga_line_follower_pnr.json
+fpga_line_follower.json
+

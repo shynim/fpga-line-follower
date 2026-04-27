@@ -1,5 +1,5 @@
 {
-    "name": "uart",
+    "name": "fpga_line_follower",
     "testBenches": ["tb/qtr_tb.v", "tb/uart_tb.v"],
     "constraintsFile": "tangnano9k.cst",
     "top": "top"
