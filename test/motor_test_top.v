@@ -1,7 +1,7 @@
 `default_nettype none
 
 module motor_test_top (
-    input wire sys_clk,    // 27 MHz clock from the Tang Nano
+    input wire clk,    // 27 MHz clock from the Tang Nano
     input wire btn1,       // <--- Updated to match your CST file
     
     // Hardware pins to the motor driver
@@ -21,7 +21,7 @@ module motor_test_top (
     localparam TWO_SECONDS = 26'd54_000_000;
 
     // 1. The State Machine Timer
-    always @(posedge sys_clk) begin
+    always @(posedge clk) begin
         if (rst) begin
             timer <= 0;
             state <= 0;
@@ -65,10 +65,10 @@ module motor_test_top (
     end
 
     // 3. Instantiate the Motor Driver
-    motor_driver #(
+    driver #(
         .PRESCALER(8'd10) // Real-world speed!
     ) driver (
-        .clk(sys_clk),
+        .clk(clk),
         .rst(rst),
         .speed_a(speed_a),
         .speed_b(speed_b),

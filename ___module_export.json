@@ -7,7 +7,7 @@
         "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:3.1-82.10"
       },
       "ports": {
-        "sys_clk": {
+        "clk": {
           "direction": "input",
           "bits": [ 2 ]
         },
@@ -753,7 +753,7 @@
         },
         "driver": {
           "hide_name": 0,
-          "type": "motor_driver",
+          "type": "driver",
           "parameters": {
             "PRESCALER": 10
           },
@@ -1094,6 +1094,13 @@
             "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:5.16-5.20"
           }
         },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:4.16-4.19"
+          }
+        },
         "dir_a": {
           "hide_name": 0,
           "bits": [ 159, 160 ],
@@ -1156,13 +1163,6 @@
           "bits": [ 10 ],
           "attributes": {
             "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:10.17-10.21"
-          }
-        },
-        "sys_clk": {
-          "hide_name": 0,
-          "bits": [ 2 ],
-          "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:4.16-4.23"
           }
         },
         "timer": {
