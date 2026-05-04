@@ -5,8 +5,8 @@ module uart_rx
     parameter DELAY_FRAMES = 234 
 )
 (
-    input clk,
-    input uart_rx_pin,
+    input wire clk,
+    input wire uart_rx_pin,
     output reg [7:0] data_out = 0,
     output reg byte_ready = 0
 );

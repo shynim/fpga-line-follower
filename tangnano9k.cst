@@ -21,26 +21,23 @@ IO_PORT "uart_tx" IO_TYPE=LVCMOS33;
 IO_LOC  "uart_rx" 18;
 IO_PORT "uart_rx" IO_TYPE=LVCMOS33;
 
-// --- Left Motor (Motor A) ---
-IO_LOC "pwma" 51;
+IO_LOC  "pwma" 51;
 IO_PORT "pwma" IO_TYPE=LVCMOS33;
 
-IO_LOC "ain1" 53;
+IO_LOC  "ain1" 54;
 IO_PORT "ain1" IO_TYPE=LVCMOS33;
 
-IO_LOC "ain2" 54;
+IO_LOC  "ain2" 53;
 IO_PORT "ain2" IO_TYPE=LVCMOS33;
 
-// --- Right Motor (Motor B) ---
-IO_LOC "pwmb" 55;
+IO_LOC  "pwmb" 55;
 IO_PORT "pwmb" IO_TYPE=LVCMOS33;
 
-IO_LOC "bin1" 56;
+IO_LOC  "bin1" 56;
 IO_PORT "bin1" IO_TYPE=LVCMOS33;
 
-IO_LOC "bin2" 57;
+IO_LOC  "bin2" 57;
 IO_PORT "bin2" IO_TYPE=LVCMOS33;
 
-// --- Motor Driver Standby ---
-IO_LOC "stby" 68;
+IO_LOC  "stby" 68;
 IO_PORT "stby" IO_TYPE=LVCMOS33;

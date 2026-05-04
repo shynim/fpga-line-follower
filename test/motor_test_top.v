@@ -7,7 +7,8 @@ module motor_test_top (
     // Hardware pins to the motor driver
     output wire pwma, ain1, ain2,
     output wire pwmb, bin1, bin2,
-    output wire stby
+    output wire stby,
+    output wire [5:0] led // Add this line to define the 6 LEDs
 );
 
     // The Tang Nano buttons are "active low" (0 when pressed). 
@@ -78,5 +79,10 @@ module motor_test_top (
         .pwmb(pwmb), .bin1(bin1), .bin2(bin2),
         .stby(stby)
     );
+
+    // Map the first LED to the lowest bit of the state counter
+    assign led[0] = state[0]; 
+    // Turn the others off (LEDs on Tang Nano are active-low, so 1 = OFF)
+    assign led[5:1] = 5'b11111;
 
 endmodule

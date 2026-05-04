@@ -4,7 +4,7 @@
     "motor_test_top": {
       "attributes": {
         "cells_not_processed": 1,
-        "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:3.1-82.10"
+        "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:3.1-88.10"
       },
       "ports": {
         "clk": {
@@ -42,10 +42,14 @@
         "stby": {
           "direction": "output",
           "bits": [ 10 ]
+        },
+        "led": {
+          "direction": "output",
+          "bits": [ 11, "1", "1", "1", "1", "1" ]
         }
       },
       "cells": {
-        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30$4": {
+        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:31$4": {
           "hide_name": 1,
           "type": "$add",
           "parameters": {
@@ -56,7 +60,7 @@
             "Y_WIDTH": 32
           },
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30.26-30.35"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:31.26-31.35"
           },
           "port_directions": {
             "A": "input",
@@ -64,12 +68,12 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "A": [ 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ],
             "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-            "Y": [ 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ]
+            "Y": [ 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69 ]
           }
         },
-        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:33$5": {
+        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:34$5": {
           "hide_name": 1,
           "type": "$add",
           "parameters": {
@@ -80,7 +84,7 @@
             "Y_WIDTH": 32
           },
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:33.26-33.35"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:34.26-34.35"
           },
           "port_directions": {
             "A": "input",
@@ -88,12 +92,12 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
             "Y": [ 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102 ]
           }
         },
-        "$lt$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:29$3": {
+        "$lt$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30$3": {
           "hide_name": 1,
           "type": "$lt",
           "parameters": {
@@ -104,7 +108,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:29.17-29.40"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30.17-30.40"
           },
           "port_directions": {
             "A": "input",
@@ -112,12 +116,12 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+            "A": [ 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ],
             "B": [ "1", "1", "1", "1", "1", "1", "1", "0", "1", "0", "0", "1", "1", "1", "1", "1", "1", "1", "1", "0", "1", "1", "0", "0", "1", "1", "0", "0", "0", "0", "0", "0" ],
             "Y": [ 103 ]
           }
         },
-        "$not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:15$1": {
+        "$not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:16$1": {
           "hide_name": 1,
           "type": "$not",
           "parameters": {
@@ -126,7 +130,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:15.16-15.21"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:16.16-16.21"
           },
           "port_directions": {
             "A": "input",
@@ -145,7 +149,7 @@
             "WIDTH": 26
           },
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:24.5-36.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:25.5-37.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -155,7 +159,7 @@
           "connections": {
             "CLK": [ 2 ],
             "D": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130 ],
-            "Q": [ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ]
+            "Q": [ 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ]
           }
         },
         "$procdff$42": {
@@ -166,7 +170,7 @@
             "WIDTH": 2
           },
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:24.5-36.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:25.5-37.8"
           },
           "port_directions": {
             "CLK": "input",
@@ -176,7 +180,7 @@
           "connections": {
             "CLK": [ 2 ],
             "D": [ 131, 132 ],
-            "Q": [ 69, 70 ]
+            "Q": [ 11, 70 ]
           }
         },
         "$procmux$10_CMP0": {
@@ -191,7 +195,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:55.16-55.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:56.16-56.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -199,7 +203,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "1", "1" ],
             "Y": [ 133 ]
           }
@@ -216,7 +220,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:51.16-51.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:52.16-52.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -224,7 +228,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "0", "1" ],
             "Y": [ 134 ]
           }
@@ -241,7 +245,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:47.16-47.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:48.16-48.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -249,7 +253,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "1", "0" ],
             "Y": [ 135 ]
           }
@@ -264,14 +268,14 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.20-43.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.20-44.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "Y": [ 136 ]
           }
         },
@@ -284,7 +288,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:55.16-55.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:56.16-56.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -311,7 +315,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:55.16-55.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:56.16-56.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -319,7 +323,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "1", "1" ],
             "Y": [ 137 ]
           }
@@ -336,7 +340,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:51.16-51.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:52.16-52.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -344,7 +348,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "0", "1" ],
             "Y": [ 138 ]
           }
@@ -361,7 +365,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:47.16-47.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:48.16-48.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -369,7 +373,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "1", "0" ],
             "Y": [ 139 ]
           }
@@ -384,14 +388,14 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.20-43.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.20-44.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "Y": [ 140 ]
           }
         },
@@ -404,7 +408,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:55.16-55.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:56.16-56.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -431,7 +435,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:55.16-55.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:56.16-56.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -439,7 +443,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "1", "1" ],
             "Y": [ 149 ]
           }
@@ -456,7 +460,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:51.16-51.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:52.16-52.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -464,7 +468,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "0", "1" ],
             "Y": [ 150 ]
           }
@@ -481,7 +485,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:47.16-47.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:48.16-48.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -489,7 +493,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "1", "0" ],
             "Y": [ 151 ]
           }
@@ -504,14 +508,14 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.20-43.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.20-44.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "Y": [ 152 ]
           }
         },
@@ -524,7 +528,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:55.16-55.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:56.16-56.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -551,7 +555,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:55.16-55.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:56.16-56.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -559,7 +563,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "1", "1" ],
             "Y": [ 155 ]
           }
@@ -576,7 +580,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:51.16-51.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:52.16-52.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -584,7 +588,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "0", "1" ],
             "Y": [ 156 ]
           }
@@ -601,7 +605,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:47.16-47.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:48.16-48.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -609,7 +613,7 @@
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "B": [ "1", "0" ],
             "Y": [ 157 ]
           }
@@ -624,14 +628,14 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.20-43.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.20-44.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
             "Y": "output"
           },
           "connections": {
-            "A": [ 69, 70 ],
+            "A": [ 11, 70 ],
             "Y": [ 158 ]
           }
         },
@@ -643,7 +647,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:29.17-29.40|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:29.13-34.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30.17-30.40|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30.13-35.16"
           },
           "port_directions": {
             "A": "input",
@@ -653,7 +657,7 @@
           },
           "connections": {
             "A": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
-            "B": [ 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62 ],
+            "B": [ 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63 ],
             "S": [ 103 ],
             "Y": [ 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186 ]
           }
@@ -666,7 +670,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:25.13-25.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:25.9-35.12"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:26.13-26.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:26.9-36.12"
           },
           "port_directions": {
             "A": "input",
@@ -689,7 +693,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:29.17-29.40|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:29.13-34.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30.17-30.40|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30.13-35.16"
           },
           "port_directions": {
             "A": "input",
@@ -699,7 +703,7 @@
           },
           "connections": {
             "A": [ 71, 72 ],
-            "B": [ 69, 70 ],
+            "B": [ 11, 70 ],
             "S": [ 103 ],
             "Y": [ 187, 188 ]
           }
@@ -712,7 +716,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:25.13-25.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:25.9-35.12"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:26.13-26.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:26.9-36.12"
           },
           "port_directions": {
             "A": "input",
@@ -736,7 +740,7 @@
           },
           "attributes": {
             "full_case": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:55.16-55.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.9-64.16"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:56.16-56.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:44.9-65.16"
           },
           "port_directions": {
             "A": "input",
@@ -759,7 +763,7 @@
           },
           "attributes": {
             "module_not_derived": 1,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:70.7-80.6"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:71.7-81.6"
           },
           "connections": {
             "ain1": [ 5 ],
@@ -783,112 +787,112 @@
           "hide_name": 1,
           "bits": [ 159, 160 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:42.5-65.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.5-66.8"
           }
         },
         "$0\\dir_b[1:0]": {
           "hide_name": 1,
           "bits": [ 153, 154 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:42.5-65.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.5-66.8"
           }
         },
         "$0\\speed_a[7:0]": {
           "hide_name": 1,
           "bits": [ 141, 142, 143, 144, 145, 146, 147, 148 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:42.5-65.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.5-66.8"
           }
         },
         "$0\\speed_b[7:0]": {
           "hide_name": 1,
           "bits": [ 189, 190, 191, 192, 193, 194, 195, 196 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:42.5-65.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.5-66.8"
           }
         },
         "$0\\state[1:0]": {
           "hide_name": 1,
           "bits": [ 131, 132 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:24.5-36.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:25.5-37.8"
           }
         },
         "$0\\timer[25:0]": {
           "hide_name": 1,
           "bits": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:24.5-36.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:25.5-37.8"
           }
         },
         "$1\\dir_a[1:0]": {
           "hide_name": 1,
           "bits": [ 159, 160 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:42.5-65.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.5-66.8"
           }
         },
         "$1\\dir_b[1:0]": {
           "hide_name": 1,
           "bits": [ 153, 154 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:42.5-65.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.5-66.8"
           }
         },
         "$1\\speed_a[7:0]": {
           "hide_name": 1,
           "bits": [ 141, 142, 143, 144, 145, 146, 147, 148 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:42.5-65.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.5-66.8"
           }
         },
         "$1\\speed_b[7:0]": {
           "hide_name": 1,
           "bits": [ 189, 190, 191, 192, 193, 194, 195, 196 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:42.5-65.8"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:43.5-66.8"
           }
         },
         "$1\\state[1:0]": {
           "hide_name": 1,
           "bits": [ "0", "0" ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:19.15-19.24"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:20.15-20.24"
           }
         },
         "$1\\timer[25:0]": {
           "hide_name": 1,
           "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:18.16-18.25"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:19.16-19.25"
           }
         },
-        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30$4_Y": {
+        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:31$4_Y": {
           "hide_name": 1,
-          "bits": [ 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68 ],
+          "bits": [ 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30.26-30.35"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:31.26-31.35"
           }
         },
-        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:33$5_Y": {
+        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:34$5_Y": {
           "hide_name": 1,
           "bits": [ 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:33.26-33.35"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:34.26-34.35"
           }
         },
-        "$lt$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:29$3_Y": {
+        "$lt$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30$3_Y": {
           "hide_name": 1,
           "bits": [ 103 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:29.17-29.40"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:30.17-30.40"
           }
         },
-        "$not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:15$1_Y": {
+        "$not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:16$1_Y": {
           "hide_name": 1,
           "bits": [ 104 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:15.16-15.21"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:16.16-16.21"
           }
         },
         "$procmux$10_CMP": {
@@ -1105,14 +1109,21 @@
           "hide_name": 0,
           "bits": [ 159, 160 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:40.15-40.20"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:41.15-41.20"
           }
         },
         "dir_b": {
           "hide_name": 0,
           "bits": [ 153, 154 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:40.22-40.27"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:41.22-41.27"
+          }
+        },
+        "led": {
+          "hide_name": 0,
+          "bits": [ 11, "1", "1", "1", "1", "1" ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:11.23-11.26"
           }
         },
         "pwma": {
@@ -1133,29 +1144,29 @@
           "hide_name": 0,
           "bits": [ 104 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:15.10-15.13"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:16.10-16.13"
           }
         },
         "speed_a": {
           "hide_name": 0,
           "bits": [ 141, 142, 143, 144, 145, 146, 147, 148 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:39.15-39.22"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:40.15-40.22"
           }
         },
         "speed_b": {
           "hide_name": 0,
           "bits": [ 189, 190, 191, 192, 193, 194, 195, 196 ],
           "attributes": {
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:39.24-39.31"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:40.24-40.31"
           }
         },
         "state": {
           "hide_name": 0,
-          "bits": [ 69, 70 ],
+          "bits": [ 11, 70 ],
           "attributes": {
             "init": 0,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:19.15-19.20"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:20.15-20.20"
           }
         },
         "stby": {
@@ -1167,10 +1178,10 @@
         },
         "timer": {
           "hide_name": 0,
-          "bits": [ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 ],
+          "bits": [ 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ],
           "attributes": {
             "init": 0,
-            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:18.16-18.21"
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\motor_test_top.v:19.16-19.21"
           }
         }
       }

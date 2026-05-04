@@ -5,11 +5,11 @@ module top
     parameter DELAY_FRAMES = 234 
 )
 (
-    input clk,
-    input uart_rx,
-    output uart_tx,
+    input wire clk,
+    input wire uart_rx,
+    output wire uart_tx,
     output reg [5:0] led = 6'b111111, // Default all LEDs OFF
-    input btn1
+    input wire btn1
 );
 
 // 1. Wires from the Receiver

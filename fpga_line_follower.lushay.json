@@ -7,5 +7,8 @@
         "tb/driver_tb.v"
     ],
     "constraintsFile": "tangnano9k.cst",
-    "top": "motor_test_top"
+    "top": "motor_test_top",
+    "board": "tangnano9k",
+    "programMode": "ram"
+    
 }
