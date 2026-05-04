@@ -1,6 +1,6 @@
 {
     "name": "fpga_line_follower",
-    "testBenches": ["tb/qtr_tb.v", "tb/uart_tb.v"],
+    "testBenches": ["tb/qtr_tb.v", "tb/uart_tb.v", "tb/pwm_tb.v"],
     "constraintsFile": "tangnano9k.cst",
     "top": "top"
 }
