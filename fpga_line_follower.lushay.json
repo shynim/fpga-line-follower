@@ -10,7 +10,7 @@
         "tb/qtr_position_tb.v"
     ],
     "constraintsFile": "tangnano9k.cst",
-    "top": "motor_test_top",
+    "top": "qtr_raw_test_top",
     "board": "tangnano9k",
     "programMode": "ram"
     
