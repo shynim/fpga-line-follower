@@ -10,8 +10,8 @@
         "tb/qtr_position_tb.v"
     ],
     "constraintsFile": "tangnano9k.cst",
-    "top": "qtr_calibration_test_top",
+    "top": "test_top",
     "board": "tangnano9k",
-    "programMode": "ram"
+    "programMode": "flash"
     
 }
