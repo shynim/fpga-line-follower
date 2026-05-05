@@ -6,7 +6,8 @@
         "tb/uart_tb.v",
         "tb/pwm_tb.v",
         "tb/driver_tb.v",
-        "tb/qtr_normalizer_tb.v"
+        "tb/qtr_normalizer_tb.v",
+        "tb/qtr_position_tb.v"
     ],
     "constraintsFile": "tangnano9k.cst",
     "top": "motor_test_top",
