@@ -1,0 +1,4057 @@
+{
+  "creator": "Yosys 0.64+68 (git sha1 413169663-dirty, x86_64-w64-mingw32-g++ 13.2.1 -O3)",
+  "modules": {
+    "qtr_normalizer_test_top": {
+      "attributes": {
+        "cells_not_processed": 1,
+        "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:1.1-145.10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "btn1": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "btn2": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "s": {
+          "direction": "inout",
+          "bits": [ 5, 6, 7, 8, 9, 10, 11, 12 ]
+        },
+        "uart_tx": {
+          "direction": "output",
+          "bits": [ 13 ]
+        },
+        "led": {
+          "direction": "output",
+          "bits": [ "1", "1", "1", "1", "1", 14 ]
+        },
+        "stby": {
+          "direction": "output",
+          "bits": [ "0" ]
+        }
+      },
+      "cells": {
+        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:113$9": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 8,
+            "Y_WIDTH": 8
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:113.39-113.53"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16, 17, 18 ],
+            "B": [ "0", "0", "0", "0", "1", "1", "0", "0" ],
+            "Y": [ 19, 20, 21, 22, 23, 24, 25, 26 ]
+          }
+        },
+        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:114$10": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 8,
+            "Y_WIDTH": 8
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:114.39-114.53"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16, 17, 18 ],
+            "B": [ "1", "1", "1", "0", "1", "1", "0", "0" ],
+            "Y": [ 27, 28, 29, 30, 31, 32, 33, 34 ]
+          }
+        },
+        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:87$6": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 22,
+            "B_SIGNED": 0,
+            "B_WIDTH": 32,
+            "Y_WIDTH": 32
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:87.33-87.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88 ]
+          }
+        },
+        "$ge$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:83$5": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 22,
+            "B_SIGNED": 0,
+            "B_WIDTH": 22,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:83.17-83.46"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56 ],
+            "B": [ "0", "0", "0", "0", "0", "1", "1", "1", "0", "1", "0", "0", "1", "1", "0", "0", "1", "0", "0", "1", "0", "1" ],
+            "Y": [ 89 ]
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130$14": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.24-130.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 90 ],
+            "B": [ 91 ],
+            "Y": [ 92 ]
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132$18": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.24-132.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 93 ],
+            "B": [ 94 ],
+            "Y": [ 95 ]
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134$22": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.24-134.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 96 ],
+            "B": [ 97 ],
+            "Y": [ 98 ]
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136$26": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.24-136.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 99 ],
+            "B": [ 100 ],
+            "Y": [ 101 ]
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138$30": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.24-138.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 102 ],
+            "B": [ 103 ],
+            "Y": [ 104 ]
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140$34": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.25-140.53"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 105 ],
+            "B": [ 106 ],
+            "Y": [ 107 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130$12": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.24-130.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 90 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130$13": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.38-130.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "Y": [ 91 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:131$15": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:131.50-131.60"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 110 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132$16": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.24-132.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 93 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132$17": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.38-132.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "Y": [ 94 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:133$19": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:133.50-133.60"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 111 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134$20": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.24-134.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 96 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134$21": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.38-134.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "Y": [ 97 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:135$23": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:135.50-135.60"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 112 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136$24": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.24-136.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 99 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136$25": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.38-136.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "Y": [ 100 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:137$27": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:137.50-137.60"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 113 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138$28": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.24-138.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 102 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138$29": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.38-138.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "Y": [ 103 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:139$31": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:139.51-139.61"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 114 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140$32": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.25-140.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 105 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140$33": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.39-140.53"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "Y": [ 106 ]
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:141$35": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:141.51-141.61"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108 ],
+            "Y": [ 115 ]
+          }
+        },
+        "$lt$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:113$8": {
+          "hide_name": 1,
+          "type": "$lt",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 32,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:113.13-113.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16, 17, 18 ],
+            "B": [ "0", "1", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 116 ]
+          }
+        },
+        "$not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:16$1": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:16.16-16.21"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 117 ]
+          }
+        },
+        "$not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:17$2": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:17.22-17.27"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "Y": [ 118 ]
+          }
+        },
+        "$not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:50$3": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:50.21-50.36"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 119 ],
+            "Y": [ 14 ]
+          }
+        },
+        "$procdff$189": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:117.5-144.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 120 ],
+            "Q": [ 109 ]
+          }
+        },
+        "$procdff$190": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 8
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:117.5-144.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 121, 122, 123, 124, 125, 126, 127, 128 ],
+            "Q": [ 129, 130, 131, 132, 133, 134, 135, 136 ]
+          }
+        },
+        "$procdff$191": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:117.5-144.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 137, 138, 139, 140 ],
+            "Q": [ 141, 142, 143, 144 ]
+          }
+        },
+        "$procdff$192": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:117.5-144.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160 ],
+            "Q": [ 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176 ]
+          }
+        },
+        "$procdff$193": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:117.5-144.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 177, 178, 179, 180 ],
+            "Q": [ 15, 16, 17, 18 ]
+          }
+        },
+        "$procdff$194": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 22
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:78.5-91.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202 ],
+            "Q": [ 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56 ]
+          }
+        },
+        "$procdff$195": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": 1,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:78.5-91.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 203 ],
+            "Q": [ 204 ]
+          }
+        },
+        "$procmux$100_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.149-134.149|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "1", "1", "0" ],
+            "Y": [ 205 ]
+          }
+        },
+        "$procmux$101": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.24-134.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.20-134.149"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "1", "1", "0" ],
+            "S": [ 98 ],
+            "Y": [ 206, 207, 208, 209 ]
+          }
+        },
+        "$procmux$103_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:133.77-133.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 210 ]
+          }
+        },
+        "$procmux$104": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:133.50-133.60|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:133.46-133.73"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "0", "1", "0" ],
+            "B": [ 141, 142, 143, 144 ],
+            "S": [ 108 ],
+            "Y": [ 211, 212, 213, 214 ]
+          }
+        },
+        "$procmux$106_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.150-132.150|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "0", "1", "0" ],
+            "Y": [ 215 ]
+          }
+        },
+        "$procmux$107": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.24-132.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.20-132.150"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "0", "1", "0" ],
+            "S": [ 95 ],
+            "Y": [ 216, 217, 218, 219 ]
+          }
+        },
+        "$procmux$109_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:131.77-131.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 220 ]
+          }
+        },
+        "$procmux$110": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:131.50-131.60|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:131.46-131.73"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "1", "0", "0" ],
+            "B": [ 141, 142, 143, 144 ],
+            "S": [ 108 ],
+            "Y": [ 221, 222, 223, 224 ]
+          }
+        },
+        "$procmux$112_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.151-130.151|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 225 ]
+          }
+        },
+        "$procmux$113": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.24-130.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.20-130.151"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "1", "0", "0" ],
+            "S": [ 92 ],
+            "Y": [ 226, 227, 228, 229 ]
+          }
+        },
+        "$procmux$115_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:129.20-129.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 230 ]
+          }
+        },
+        "$procmux$116": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:125.25-125.38|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:125.21-128.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "0", "0" ],
+            "S": [ 204 ],
+            "Y": [ 231, 232, 233, 234 ]
+          }
+        },
+        "$procmux$118_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.25-122.25|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "Y": [ 235 ]
+          }
+        },
+        "$procmux$120": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:118.13-118.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:118.9-143.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0" ],
+            "B": [ 236, 237, 238, 239 ],
+            "S": [ 3 ],
+            "Y": [ 137, 138, 139, 140 ]
+          }
+        },
+        "$procmux$123": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 8
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.25-140.53|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.21-140.117"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "B": [ "0", "1", "0", "1", "0", "0", "0", "0" ],
+            "S": [ 107 ],
+            "Y": [ 240, 241, 242, 243, 244, 245, 246, 247 ]
+          }
+        },
+        "$procmux$125": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": 6,
+            "WIDTH": 8
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:139.79-139.79|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "B": [ 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287 ],
+            "S": [ 288, 289, 290, 291, 292, 293 ],
+            "Y": [ 294, 295, 296, 297, 298, 299, 300, 301 ]
+          }
+        },
+        "$procmux$126_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:139.79-139.79|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 288 ]
+          }
+        },
+        "$procmux$127": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 8
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.24-138.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.20-138.116"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "B": [ "1", "0", "1", "1", "0", "0", "0", "0" ],
+            "S": [ 104 ],
+            "Y": [ 248, 249, 250, 251, 252, 253, 254, 255 ]
+          }
+        },
+        "$procmux$129_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:137.77-137.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 289 ]
+          }
+        },
+        "$procmux$130": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 8
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.24-136.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.20-136.149"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "B": [ 302, 303, 304, 305, 306, 307, 308, 309 ],
+            "S": [ 101 ],
+            "Y": [ 256, 257, 258, 259, 260, 261, 262, 263 ]
+          }
+        },
+        "$procmux$132_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:135.77-135.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "1", "1", "0" ],
+            "Y": [ 290 ]
+          }
+        },
+        "$procmux$133": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 8
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.24-134.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.20-134.149"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "B": [ 302, 303, 304, 305, 306, 307, 308, 309 ],
+            "S": [ 98 ],
+            "Y": [ 264, 265, 266, 267, 268, 269, 270, 271 ]
+          }
+        },
+        "$procmux$135_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:133.77-133.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 291 ]
+          }
+        },
+        "$procmux$136": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 8
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.24-132.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.20-132.150"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "B": [ 302, 303, 304, 305, 306, 307, 308, 309 ],
+            "S": [ 95 ],
+            "Y": [ 272, 273, 274, 275, 276, 277, 278, 279 ]
+          }
+        },
+        "$procmux$138_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:131.77-131.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 292 ]
+          }
+        },
+        "$procmux$139": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 8
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.24-130.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.20-130.151"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "B": [ 302, 303, 304, 305, 306, 307, 308, 309 ],
+            "S": [ 92 ],
+            "Y": [ 280, 281, 282, 283, 284, 285, 286, 287 ]
+          }
+        },
+        "$procmux$141_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:129.20-129.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 293 ]
+          }
+        },
+        "$procmux$143": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 8
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:118.13-118.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:118.9-143.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "B": [ 294, 295, 296, 297, 298, 299, 300, 301 ],
+            "S": [ 3 ],
+            "Y": [ 121, 122, 123, 124, 125, 126, 127, 128 ]
+          }
+        },
+        "$procmux$145": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": 13,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.117-140.117|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "B": [ "0", 310, "0", 311, "0", 312, "0", 313, "0", 314, "0", 315, "0" ],
+            "S": [ 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328 ],
+            "Y": [ 329 ]
+          }
+        },
+        "$procmux$146_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.117-140.117|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "0", "1", "1" ],
+            "Y": [ 316 ]
+          }
+        },
+        "$procmux$147": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.25-140.53|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.21-140.117"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "B": [ "1" ],
+            "S": [ 107 ],
+            "Y": [ 310 ]
+          }
+        },
+        "$procmux$149_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:139.79-139.79|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 317 ]
+          }
+        },
+        "$procmux$150_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.116-138.116|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 318 ]
+          }
+        },
+        "$procmux$151": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.24-138.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.20-138.116"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "B": [ "1" ],
+            "S": [ 104 ],
+            "Y": [ 311 ]
+          }
+        },
+        "$procmux$153_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:137.77-137.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 319 ]
+          }
+        },
+        "$procmux$154_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.149-136.149|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 320 ]
+          }
+        },
+        "$procmux$155": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.24-136.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.20-136.149"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "B": [ "1" ],
+            "S": [ 101 ],
+            "Y": [ 312 ]
+          }
+        },
+        "$procmux$157_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:135.77-135.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "1", "1", "0" ],
+            "Y": [ 321 ]
+          }
+        },
+        "$procmux$158_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.149-134.149|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "1", "1", "0" ],
+            "Y": [ 322 ]
+          }
+        },
+        "$procmux$159": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.24-134.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.20-134.149"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "B": [ "1" ],
+            "S": [ 98 ],
+            "Y": [ 313 ]
+          }
+        },
+        "$procmux$161_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:133.77-133.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 323 ]
+          }
+        },
+        "$procmux$162_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.150-132.150|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "0", "1", "0" ],
+            "Y": [ 324 ]
+          }
+        },
+        "$procmux$163": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.24-132.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.20-132.150"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "B": [ "1" ],
+            "S": [ 95 ],
+            "Y": [ 314 ]
+          }
+        },
+        "$procmux$165_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:131.77-131.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 325 ]
+          }
+        },
+        "$procmux$166_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.151-130.151|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 326 ]
+          }
+        },
+        "$procmux$167": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.24-130.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.20-130.151"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "B": [ "1" ],
+            "S": [ 92 ],
+            "Y": [ 315 ]
+          }
+        },
+        "$procmux$169_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:129.20-129.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 327 ]
+          }
+        },
+        "$procmux$170_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.25-122.25|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "Y": [ 328 ]
+          }
+        },
+        "$procmux$172": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:118.13-118.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:118.9-143.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 329 ],
+            "S": [ 3 ],
+            "Y": [ 120 ]
+          }
+        },
+        "$procmux$175": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 8
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:113.13-113.24|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:113.9-114.54"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 27, 28, 29, 30, 31, 32, 33, 34 ],
+            "B": [ 19, 20, 21, 22, 23, 24, 25, 26 ],
+            "S": [ 116 ],
+            "Y": [ 302, 303, 304, 305, 306, 307, 308, 309 ]
+          }
+        },
+        "$procmux$178": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:83.17-83.46|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:83.13-89.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 89 ],
+            "Y": [ 330 ]
+          }
+        },
+        "$procmux$181": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:79.13-79.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:79.9-90.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 330 ],
+            "S": [ 3 ],
+            "Y": [ 203 ]
+          }
+        },
+        "$procmux$184": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 22
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:83.17-83.46|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:83.13-89.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 89 ],
+            "Y": [ 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352 ]
+          }
+        },
+        "$procmux$187": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 22
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:79.13-79.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:79.9-90.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352 ],
+            "S": [ 3 ],
+            "Y": [ 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202 ]
+          }
+        },
+        "$procmux$44": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.24-136.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.20-136.149"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16, 17, 18 ],
+            "B": [ 161, 162, 163, 164 ],
+            "S": [ 101 ],
+            "Y": [ 353, 354, 355, 356 ]
+          }
+        },
+        "$procmux$46": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": 4,
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:135.77-135.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16, 17, 18 ],
+            "B": [ 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368 ],
+            "S": [ 369, 370, 371, 372 ],
+            "Y": [ 373, 374, 375, 376 ]
+          }
+        },
+        "$procmux$47_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:135.77-135.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "1", "1", "0" ],
+            "Y": [ 369 ]
+          }
+        },
+        "$procmux$48": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.24-134.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.20-134.149"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16, 17, 18 ],
+            "B": [ 165, 166, 167, 168 ],
+            "S": [ 98 ],
+            "Y": [ 357, 358, 359, 360 ]
+          }
+        },
+        "$procmux$50_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:133.77-133.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 370 ]
+          }
+        },
+        "$procmux$51": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.24-132.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.20-132.150"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16, 17, 18 ],
+            "B": [ 169, 170, 171, 172 ],
+            "S": [ 95 ],
+            "Y": [ 361, 362, 363, 364 ]
+          }
+        },
+        "$procmux$53_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:131.77-131.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 371 ]
+          }
+        },
+        "$procmux$54": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.24-130.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.20-130.151"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16, 17, 18 ],
+            "B": [ 173, 174, 175, 176 ],
+            "S": [ 92 ],
+            "Y": [ 365, 366, 367, 368 ]
+          }
+        },
+        "$procmux$56_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:129.20-129.20|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 372 ]
+          }
+        },
+        "$procmux$58": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:118.13-118.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:118.9-143.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15, 16, 17, 18 ],
+            "B": [ 373, 374, 375, 376 ],
+            "S": [ 3 ],
+            "Y": [ 177, 178, 179, 180 ]
+          }
+        },
+        "$procmux$72": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:125.25-125.38|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:125.21-128.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176 ],
+            "B": [ 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392 ],
+            "S": [ 204 ],
+            "Y": [ 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408 ]
+          }
+        },
+        "$procmux$74": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 16
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.25-122.25|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176 ],
+            "B": [ 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408 ],
+            "S": [ 409 ],
+            "Y": [ 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425 ]
+          }
+        },
+        "$procmux$75_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.25-122.25|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "Y": [ 409 ]
+          }
+        },
+        "$procmux$77": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 16
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:118.13-118.16|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:118.9-143.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176 ],
+            "B": [ 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425 ],
+            "S": [ 3 ],
+            "Y": [ 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160 ]
+          }
+        },
+        "$procmux$79": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:141.51-141.61|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:141.47-141.74"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0" ],
+            "B": [ 141, 142, 143, 144 ],
+            "S": [ 108 ],
+            "Y": [ 426, 427, 428, 429 ]
+          }
+        },
+        "$procmux$81": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": 13,
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.117-140.117|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 206, 207, 208, 209, 211, 212, 213, 214, 216, 217, 218, 219, 221, 222, 223, 224, 226, 227, 228, 229, 231, 232, 233, 234 ],
+            "S": [ 454, 455, 456, 457, 458, 459, 205, 210, 215, 220, 225, 230, 235 ],
+            "Y": [ 236, 237, 238, 239 ]
+          }
+        },
+        "$procmux$82_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.117-140.117|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "0", "1", "1" ],
+            "Y": [ 454 ]
+          }
+        },
+        "$procmux$83": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.25-140.53|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.21-140.117"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "0", "1", "1" ],
+            "S": [ 107 ],
+            "Y": [ 430, 431, 432, 433 ]
+          }
+        },
+        "$procmux$85_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:139.79-139.79|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 455 ]
+          }
+        },
+        "$procmux$86": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:139.51-139.61|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:139.47-139.75"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "1", "0", "1" ],
+            "B": [ 141, 142, 143, 144 ],
+            "S": [ 108 ],
+            "Y": [ 434, 435, 436, 437 ]
+          }
+        },
+        "$procmux$88_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.116-138.116|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 456 ]
+          }
+        },
+        "$procmux$89": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.24-138.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.20-138.116"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "1", "0", "1" ],
+            "S": [ 104 ],
+            "Y": [ 438, 439, 440, 441 ]
+          }
+        },
+        "$procmux$91_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:137.77-137.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 457 ]
+          }
+        },
+        "$procmux$92": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:137.50-137.60|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:137.46-137.73"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "0", "0", "1" ],
+            "B": [ 141, 142, 143, 144 ],
+            "S": [ 108 ],
+            "Y": [ 442, 443, 444, 445 ]
+          }
+        },
+        "$procmux$94_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.149-136.149|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 458 ]
+          }
+        },
+        "$procmux$95": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.24-136.52|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.20-136.149"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "0", "0", "0", "1" ],
+            "S": [ 101 ],
+            "Y": [ 446, 447, 448, 449 ]
+          }
+        },
+        "$procmux$97_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:135.77-135.77|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:122.13-142.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 141, 142, 143, 144 ],
+            "B": [ "1", "1", "1", "0" ],
+            "Y": [ 459 ]
+          }
+        },
+        "$procmux$98": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": 4
+          },
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:135.50-135.60|c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:135.46-135.73"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "1", "1", "0" ],
+            "B": [ 141, 142, 143, 144 ],
+            "S": [ 108 ],
+            "Y": [ 450, 451, 452, 453 ]
+          }
+        },
+        "calib_inst": {
+          "hide_name": 0,
+          "type": "qtr_calibration",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:37.21-47.6"
+          },
+          "connections": {
+            "btn2": [ 118 ],
+            "calib_time_ms": [ "0", "0", "0", "1", "0", "0", "0", "1", "1", "1", "0", "0", "1", "0", "0", "0" ],
+            "clk": [ 2 ],
+            "data_ready": [ 460 ],
+            "is_calibrating": [ 119 ],
+            "max_values": [ 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588 ],
+            "min_values": [ 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716 ],
+            "rst": [ 117 ],
+            "sensor_values": [ 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844 ]
+          }
+        },
+        "my_uart": {
+          "hide_name": 0,
+          "type": "uart_tx",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:98.13-104.6"
+          },
+          "connections": {
+            "clk": [ 2 ],
+            "data_in": [ 129, 130, 131, 132, 133, 134, 135, 136 ],
+            "transmit": [ 109 ],
+            "tx_busy": [ 108 ],
+            "uart_tx_pin": [ 13 ]
+          }
+        },
+        "norm_inst": {
+          "hide_name": 0,
+          "type": "normalizer",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:57.16-66.6"
+          },
+          "connections": {
+            "clk": [ 2 ],
+            "data_ready": [ 460 ],
+            "max_values": [ 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588 ],
+            "min_values": [ 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716 ],
+            "norm_ready": [ 845 ],
+            "normalized_values": [ 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957 ],
+            "raw_values": [ 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844 ],
+            "rst": [ 117 ]
+          }
+        },
+        "reader_inst": {
+          "hide_name": 0,
+          "type": "qtr_raw_reader",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": 1,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:23.20-30.6"
+          },
+          "connections": {
+            "clk": [ 2 ],
+            "data_ready": [ 460 ],
+            "rst": [ 117 ],
+            "sensor_pins": [ 5, 6, 7, 8, 9, 10, 11, 12 ],
+            "sensor_values": [ 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844 ],
+            "start": [ "1" ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\ascii_char[7:0]": {
+          "hide_name": 1,
+          "bits": [ 302, 303, 304, 305, 306, 307, 308, 309 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:112.5-115.8"
+          }
+        },
+        "$0\\captured_val[15:0]": {
+          "hide_name": 1,
+          "bits": [ 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:117.5-144.8"
+          }
+        },
+        "$0\\nibble[3:0]": {
+          "hide_name": 1,
+          "bits": [ 177, 178, 179, 180 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:117.5-144.8"
+          }
+        },
+        "$0\\sample_timer[21:0]": {
+          "hide_name": 1,
+          "bits": [ 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:78.5-91.8"
+          }
+        },
+        "$0\\state[3:0]": {
+          "hide_name": 1,
+          "bits": [ 137, 138, 139, 140 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:117.5-144.8"
+          }
+        },
+        "$0\\trigger_print[0:0]": {
+          "hide_name": 1,
+          "bits": [ 203 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:78.5-91.8"
+          }
+        },
+        "$0\\uart_data[7:0]": {
+          "hide_name": 1,
+          "bits": [ 121, 122, 123, 124, 125, 126, 127, 128 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:117.5-144.8"
+          }
+        },
+        "$0\\uart_transmit[0:0]": {
+          "hide_name": 1,
+          "bits": [ 120 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:117.5-144.8"
+          }
+        },
+        "$1\\ascii_char[7:0]": {
+          "hide_name": 1,
+          "bits": [ 302, 303, 304, 305, 306, 307, 308, 309 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:112.5-115.8"
+          }
+        },
+        "$1\\sample_timer[21:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:75.16-75.32"
+          }
+        },
+        "$1\\state[3:0]": {
+          "hide_name": 1,
+          "bits": [ "0", "0", "0", "0" ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:107.15-107.24"
+          }
+        },
+        "$1\\trigger_print[0:0]": {
+          "hide_name": 1,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:76.9-76.26"
+          }
+        },
+        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:113$9_Y": {
+          "hide_name": 1,
+          "bits": [ 19, 20, 21, 22, 23, 24, 25, 26 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:113.39-113.53"
+          }
+        },
+        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:114$10_Y": {
+          "hide_name": 1,
+          "bits": [ 27, 28, 29, 30, 31, 32, 33, 34 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:114.39-114.53"
+          }
+        },
+        "$add$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:87$6_Y": {
+          "hide_name": 1,
+          "bits": [ 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:87.33-87.49"
+          }
+        },
+        "$ge$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:83$5_Y": {
+          "hide_name": 1,
+          "bits": [ 89 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:83.17-83.46"
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130$14_Y": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.24-130.52"
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132$18_Y": {
+          "hide_name": 1,
+          "bits": [ 95 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.24-132.52"
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134$22_Y": {
+          "hide_name": 1,
+          "bits": [ 98 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.24-134.52"
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136$26_Y": {
+          "hide_name": 1,
+          "bits": [ 101 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.24-136.52"
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138$30_Y": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.24-138.52"
+          }
+        },
+        "$logic_and$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140$34_Y": {
+          "hide_name": 1,
+          "bits": [ 107 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.25-140.53"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130$12_Y": {
+          "hide_name": 1,
+          "bits": [ 90 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.24-130.34"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130$13_Y": {
+          "hide_name": 1,
+          "bits": [ 91 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:130.38-130.52"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:131$15_Y": {
+          "hide_name": 1,
+          "bits": [ 110 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:131.50-131.60"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132$16_Y": {
+          "hide_name": 1,
+          "bits": [ 93 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.24-132.34"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132$17_Y": {
+          "hide_name": 1,
+          "bits": [ 94 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:132.38-132.52"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:133$19_Y": {
+          "hide_name": 1,
+          "bits": [ 111 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:133.50-133.60"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134$20_Y": {
+          "hide_name": 1,
+          "bits": [ 96 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.24-134.34"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134$21_Y": {
+          "hide_name": 1,
+          "bits": [ 97 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:134.38-134.52"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:135$23_Y": {
+          "hide_name": 1,
+          "bits": [ 112 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:135.50-135.60"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136$24_Y": {
+          "hide_name": 1,
+          "bits": [ 99 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.24-136.34"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136$25_Y": {
+          "hide_name": 1,
+          "bits": [ 100 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:136.38-136.52"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:137$27_Y": {
+          "hide_name": 1,
+          "bits": [ 113 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:137.50-137.60"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138$28_Y": {
+          "hide_name": 1,
+          "bits": [ 102 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.24-138.34"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138$29_Y": {
+          "hide_name": 1,
+          "bits": [ 103 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:138.38-138.52"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:139$31_Y": {
+          "hide_name": 1,
+          "bits": [ 114 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:139.51-139.61"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140$32_Y": {
+          "hide_name": 1,
+          "bits": [ 105 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.25-140.35"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140$33_Y": {
+          "hide_name": 1,
+          "bits": [ 106 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:140.39-140.53"
+          }
+        },
+        "$logic_not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:141$35_Y": {
+          "hide_name": 1,
+          "bits": [ 115 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:141.51-141.61"
+          }
+        },
+        "$lt$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:113$8_Y": {
+          "hide_name": 1,
+          "bits": [ 116 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:113.13-113.24"
+          }
+        },
+        "$not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:16$1_Y": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:16.16-16.21"
+          }
+        },
+        "$not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:17$2_Y": {
+          "hide_name": 1,
+          "bits": [ 118 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:17.22-17.27"
+          }
+        },
+        "$not$c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:50$3_Y": {
+          "hide_name": 1,
+          "bits": [ 14 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:50.21-50.36"
+          }
+        },
+        "$procmux$100_CMP": {
+          "hide_name": 1,
+          "bits": [ 205 ],
+          "attributes": {
+          }
+        },
+        "$procmux$101_Y": {
+          "hide_name": 1,
+          "bits": [ 206, 207, 208, 209 ],
+          "attributes": {
+          }
+        },
+        "$procmux$102_CMP": {
+          "hide_name": 1,
+          "bits": [ 98 ],
+          "attributes": {
+          }
+        },
+        "$procmux$103_CMP": {
+          "hide_name": 1,
+          "bits": [ 210 ],
+          "attributes": {
+          }
+        },
+        "$procmux$104_Y": {
+          "hide_name": 1,
+          "bits": [ 211, 212, 213, 214 ],
+          "attributes": {
+          }
+        },
+        "$procmux$105_CMP": {
+          "hide_name": 1,
+          "bits": [ 111 ],
+          "attributes": {
+          }
+        },
+        "$procmux$106_CMP": {
+          "hide_name": 1,
+          "bits": [ 215 ],
+          "attributes": {
+          }
+        },
+        "$procmux$107_Y": {
+          "hide_name": 1,
+          "bits": [ 216, 217, 218, 219 ],
+          "attributes": {
+          }
+        },
+        "$procmux$108_CMP": {
+          "hide_name": 1,
+          "bits": [ 95 ],
+          "attributes": {
+          }
+        },
+        "$procmux$109_CMP": {
+          "hide_name": 1,
+          "bits": [ 220 ],
+          "attributes": {
+          }
+        },
+        "$procmux$110_Y": {
+          "hide_name": 1,
+          "bits": [ 221, 222, 223, 224 ],
+          "attributes": {
+          }
+        },
+        "$procmux$111_CMP": {
+          "hide_name": 1,
+          "bits": [ 110 ],
+          "attributes": {
+          }
+        },
+        "$procmux$112_CMP": {
+          "hide_name": 1,
+          "bits": [ 225 ],
+          "attributes": {
+          }
+        },
+        "$procmux$113_Y": {
+          "hide_name": 1,
+          "bits": [ 226, 227, 228, 229 ],
+          "attributes": {
+          }
+        },
+        "$procmux$114_CMP": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+          }
+        },
+        "$procmux$115_CMP": {
+          "hide_name": 1,
+          "bits": [ 230 ],
+          "attributes": {
+          }
+        },
+        "$procmux$116_Y": {
+          "hide_name": 1,
+          "bits": [ 231, 232, 233, 234 ],
+          "attributes": {
+          }
+        },
+        "$procmux$117_CMP": {
+          "hide_name": 1,
+          "bits": [ 204 ],
+          "attributes": {
+          }
+        },
+        "$procmux$118_CMP": {
+          "hide_name": 1,
+          "bits": [ 235 ],
+          "attributes": {
+          }
+        },
+        "$procmux$120_Y": {
+          "hide_name": 1,
+          "bits": [ 137, 138, 139, 140 ],
+          "attributes": {
+          }
+        },
+        "$procmux$121_CMP": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+          }
+        },
+        "$procmux$123_Y": {
+          "hide_name": 1,
+          "bits": [ 240, 241, 242, 243, 244, 245, 246, 247 ],
+          "attributes": {
+          }
+        },
+        "$procmux$124_CMP": {
+          "hide_name": 1,
+          "bits": [ 107 ],
+          "attributes": {
+          }
+        },
+        "$procmux$125_Y": {
+          "hide_name": 1,
+          "bits": [ 294, 295, 296, 297, 298, 299, 300, 301 ],
+          "attributes": {
+          }
+        },
+        "$procmux$126_CMP": {
+          "hide_name": 1,
+          "bits": [ 288 ],
+          "attributes": {
+          }
+        },
+        "$procmux$127_Y": {
+          "hide_name": 1,
+          "bits": [ 248, 249, 250, 251, 252, 253, 254, 255 ],
+          "attributes": {
+          }
+        },
+        "$procmux$128_CMP": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+          }
+        },
+        "$procmux$129_CMP": {
+          "hide_name": 1,
+          "bits": [ 289 ],
+          "attributes": {
+          }
+        },
+        "$procmux$130_Y": {
+          "hide_name": 1,
+          "bits": [ 256, 257, 258, 259, 260, 261, 262, 263 ],
+          "attributes": {
+          }
+        },
+        "$procmux$131_CMP": {
+          "hide_name": 1,
+          "bits": [ 101 ],
+          "attributes": {
+          }
+        },
+        "$procmux$132_CMP": {
+          "hide_name": 1,
+          "bits": [ 290 ],
+          "attributes": {
+          }
+        },
+        "$procmux$133_Y": {
+          "hide_name": 1,
+          "bits": [ 264, 265, 266, 267, 268, 269, 270, 271 ],
+          "attributes": {
+          }
+        },
+        "$procmux$134_CMP": {
+          "hide_name": 1,
+          "bits": [ 98 ],
+          "attributes": {
+          }
+        },
+        "$procmux$135_CMP": {
+          "hide_name": 1,
+          "bits": [ 291 ],
+          "attributes": {
+          }
+        },
+        "$procmux$136_Y": {
+          "hide_name": 1,
+          "bits": [ 272, 273, 274, 275, 276, 277, 278, 279 ],
+          "attributes": {
+          }
+        },
+        "$procmux$137_CMP": {
+          "hide_name": 1,
+          "bits": [ 95 ],
+          "attributes": {
+          }
+        },
+        "$procmux$138_CMP": {
+          "hide_name": 1,
+          "bits": [ 292 ],
+          "attributes": {
+          }
+        },
+        "$procmux$139_Y": {
+          "hide_name": 1,
+          "bits": [ 280, 281, 282, 283, 284, 285, 286, 287 ],
+          "attributes": {
+          }
+        },
+        "$procmux$140_CMP": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+          }
+        },
+        "$procmux$141_CMP": {
+          "hide_name": 1,
+          "bits": [ 293 ],
+          "attributes": {
+          }
+        },
+        "$procmux$143_Y": {
+          "hide_name": 1,
+          "bits": [ 121, 122, 123, 124, 125, 126, 127, 128 ],
+          "attributes": {
+          }
+        },
+        "$procmux$144_CMP": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+          }
+        },
+        "$procmux$145_Y": {
+          "hide_name": 1,
+          "bits": [ 329 ],
+          "attributes": {
+          }
+        },
+        "$procmux$146_CMP": {
+          "hide_name": 1,
+          "bits": [ 316 ],
+          "attributes": {
+          }
+        },
+        "$procmux$147_Y": {
+          "hide_name": 1,
+          "bits": [ 310 ],
+          "attributes": {
+          }
+        },
+        "$procmux$148_CMP": {
+          "hide_name": 1,
+          "bits": [ 107 ],
+          "attributes": {
+          }
+        },
+        "$procmux$149_CMP": {
+          "hide_name": 1,
+          "bits": [ 317 ],
+          "attributes": {
+          }
+        },
+        "$procmux$150_CMP": {
+          "hide_name": 1,
+          "bits": [ 318 ],
+          "attributes": {
+          }
+        },
+        "$procmux$151_Y": {
+          "hide_name": 1,
+          "bits": [ 311 ],
+          "attributes": {
+          }
+        },
+        "$procmux$152_CMP": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+          }
+        },
+        "$procmux$153_CMP": {
+          "hide_name": 1,
+          "bits": [ 319 ],
+          "attributes": {
+          }
+        },
+        "$procmux$154_CMP": {
+          "hide_name": 1,
+          "bits": [ 320 ],
+          "attributes": {
+          }
+        },
+        "$procmux$155_Y": {
+          "hide_name": 1,
+          "bits": [ 312 ],
+          "attributes": {
+          }
+        },
+        "$procmux$156_CMP": {
+          "hide_name": 1,
+          "bits": [ 101 ],
+          "attributes": {
+          }
+        },
+        "$procmux$157_CMP": {
+          "hide_name": 1,
+          "bits": [ 321 ],
+          "attributes": {
+          }
+        },
+        "$procmux$158_CMP": {
+          "hide_name": 1,
+          "bits": [ 322 ],
+          "attributes": {
+          }
+        },
+        "$procmux$159_Y": {
+          "hide_name": 1,
+          "bits": [ 313 ],
+          "attributes": {
+          }
+        },
+        "$procmux$160_CMP": {
+          "hide_name": 1,
+          "bits": [ 98 ],
+          "attributes": {
+          }
+        },
+        "$procmux$161_CMP": {
+          "hide_name": 1,
+          "bits": [ 323 ],
+          "attributes": {
+          }
+        },
+        "$procmux$162_CMP": {
+          "hide_name": 1,
+          "bits": [ 324 ],
+          "attributes": {
+          }
+        },
+        "$procmux$163_Y": {
+          "hide_name": 1,
+          "bits": [ 314 ],
+          "attributes": {
+          }
+        },
+        "$procmux$164_CMP": {
+          "hide_name": 1,
+          "bits": [ 95 ],
+          "attributes": {
+          }
+        },
+        "$procmux$165_CMP": {
+          "hide_name": 1,
+          "bits": [ 325 ],
+          "attributes": {
+          }
+        },
+        "$procmux$166_CMP": {
+          "hide_name": 1,
+          "bits": [ 326 ],
+          "attributes": {
+          }
+        },
+        "$procmux$167_Y": {
+          "hide_name": 1,
+          "bits": [ 315 ],
+          "attributes": {
+          }
+        },
+        "$procmux$168_CMP": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+          }
+        },
+        "$procmux$169_CMP": {
+          "hide_name": 1,
+          "bits": [ 327 ],
+          "attributes": {
+          }
+        },
+        "$procmux$170_CMP": {
+          "hide_name": 1,
+          "bits": [ 328 ],
+          "attributes": {
+          }
+        },
+        "$procmux$172_Y": {
+          "hide_name": 1,
+          "bits": [ 120 ],
+          "attributes": {
+          }
+        },
+        "$procmux$173_CMP": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+          }
+        },
+        "$procmux$175_Y": {
+          "hide_name": 1,
+          "bits": [ 302, 303, 304, 305, 306, 307, 308, 309 ],
+          "attributes": {
+          }
+        },
+        "$procmux$176_CMP": {
+          "hide_name": 1,
+          "bits": [ 116 ],
+          "attributes": {
+          }
+        },
+        "$procmux$178_Y": {
+          "hide_name": 1,
+          "bits": [ 330 ],
+          "attributes": {
+          }
+        },
+        "$procmux$179_CMP": {
+          "hide_name": 1,
+          "bits": [ 89 ],
+          "attributes": {
+          }
+        },
+        "$procmux$181_Y": {
+          "hide_name": 1,
+          "bits": [ 203 ],
+          "attributes": {
+          }
+        },
+        "$procmux$182_CMP": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+          }
+        },
+        "$procmux$184_Y": {
+          "hide_name": 1,
+          "bits": [ 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352 ],
+          "attributes": {
+          }
+        },
+        "$procmux$185_CMP": {
+          "hide_name": 1,
+          "bits": [ 89 ],
+          "attributes": {
+          }
+        },
+        "$procmux$187_Y": {
+          "hide_name": 1,
+          "bits": [ 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202 ],
+          "attributes": {
+          }
+        },
+        "$procmux$188_CMP": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+          }
+        },
+        "$procmux$44_Y": {
+          "hide_name": 1,
+          "bits": [ 353, 354, 355, 356 ],
+          "attributes": {
+          }
+        },
+        "$procmux$45_CMP": {
+          "hide_name": 1,
+          "bits": [ 101 ],
+          "attributes": {
+          }
+        },
+        "$procmux$46_Y": {
+          "hide_name": 1,
+          "bits": [ 373, 374, 375, 376 ],
+          "attributes": {
+          }
+        },
+        "$procmux$47_CMP": {
+          "hide_name": 1,
+          "bits": [ 369 ],
+          "attributes": {
+          }
+        },
+        "$procmux$48_Y": {
+          "hide_name": 1,
+          "bits": [ 357, 358, 359, 360 ],
+          "attributes": {
+          }
+        },
+        "$procmux$49_CMP": {
+          "hide_name": 1,
+          "bits": [ 98 ],
+          "attributes": {
+          }
+        },
+        "$procmux$50_CMP": {
+          "hide_name": 1,
+          "bits": [ 370 ],
+          "attributes": {
+          }
+        },
+        "$procmux$51_Y": {
+          "hide_name": 1,
+          "bits": [ 361, 362, 363, 364 ],
+          "attributes": {
+          }
+        },
+        "$procmux$52_CMP": {
+          "hide_name": 1,
+          "bits": [ 95 ],
+          "attributes": {
+          }
+        },
+        "$procmux$53_CMP": {
+          "hide_name": 1,
+          "bits": [ 371 ],
+          "attributes": {
+          }
+        },
+        "$procmux$54_Y": {
+          "hide_name": 1,
+          "bits": [ 365, 366, 367, 368 ],
+          "attributes": {
+          }
+        },
+        "$procmux$55_CMP": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+          }
+        },
+        "$procmux$56_CMP": {
+          "hide_name": 1,
+          "bits": [ 372 ],
+          "attributes": {
+          }
+        },
+        "$procmux$58_Y": {
+          "hide_name": 1,
+          "bits": [ 177, 178, 179, 180 ],
+          "attributes": {
+          }
+        },
+        "$procmux$59_CMP": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+          }
+        },
+        "$procmux$72_Y": {
+          "hide_name": 1,
+          "bits": [ 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408 ],
+          "attributes": {
+          }
+        },
+        "$procmux$73_CMP": {
+          "hide_name": 1,
+          "bits": [ 204 ],
+          "attributes": {
+          }
+        },
+        "$procmux$74_Y": {
+          "hide_name": 1,
+          "bits": [ 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425 ],
+          "attributes": {
+          }
+        },
+        "$procmux$75_CMP": {
+          "hide_name": 1,
+          "bits": [ 409 ],
+          "attributes": {
+          }
+        },
+        "$procmux$77_Y": {
+          "hide_name": 1,
+          "bits": [ 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160 ],
+          "attributes": {
+          }
+        },
+        "$procmux$78_CMP": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+          }
+        },
+        "$procmux$79_Y": {
+          "hide_name": 1,
+          "bits": [ 426, 427, 428, 429 ],
+          "attributes": {
+          }
+        },
+        "$procmux$80_CMP": {
+          "hide_name": 1,
+          "bits": [ 115 ],
+          "attributes": {
+          }
+        },
+        "$procmux$81_Y": {
+          "hide_name": 1,
+          "bits": [ 236, 237, 238, 239 ],
+          "attributes": {
+          }
+        },
+        "$procmux$82_CMP": {
+          "hide_name": 1,
+          "bits": [ 454 ],
+          "attributes": {
+          }
+        },
+        "$procmux$83_Y": {
+          "hide_name": 1,
+          "bits": [ 430, 431, 432, 433 ],
+          "attributes": {
+          }
+        },
+        "$procmux$84_CMP": {
+          "hide_name": 1,
+          "bits": [ 107 ],
+          "attributes": {
+          }
+        },
+        "$procmux$85_CMP": {
+          "hide_name": 1,
+          "bits": [ 455 ],
+          "attributes": {
+          }
+        },
+        "$procmux$86_Y": {
+          "hide_name": 1,
+          "bits": [ 434, 435, 436, 437 ],
+          "attributes": {
+          }
+        },
+        "$procmux$87_CMP": {
+          "hide_name": 1,
+          "bits": [ 114 ],
+          "attributes": {
+          }
+        },
+        "$procmux$88_CMP": {
+          "hide_name": 1,
+          "bits": [ 456 ],
+          "attributes": {
+          }
+        },
+        "$procmux$89_Y": {
+          "hide_name": 1,
+          "bits": [ 438, 439, 440, 441 ],
+          "attributes": {
+          }
+        },
+        "$procmux$90_CMP": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+          }
+        },
+        "$procmux$91_CMP": {
+          "hide_name": 1,
+          "bits": [ 457 ],
+          "attributes": {
+          }
+        },
+        "$procmux$92_Y": {
+          "hide_name": 1,
+          "bits": [ 442, 443, 444, 445 ],
+          "attributes": {
+          }
+        },
+        "$procmux$93_CMP": {
+          "hide_name": 1,
+          "bits": [ 113 ],
+          "attributes": {
+          }
+        },
+        "$procmux$94_CMP": {
+          "hide_name": 1,
+          "bits": [ 458 ],
+          "attributes": {
+          }
+        },
+        "$procmux$95_Y": {
+          "hide_name": 1,
+          "bits": [ 446, 447, 448, 449 ],
+          "attributes": {
+          }
+        },
+        "$procmux$96_CMP": {
+          "hide_name": 1,
+          "bits": [ 101 ],
+          "attributes": {
+          }
+        },
+        "$procmux$97_CMP": {
+          "hide_name": 1,
+          "bits": [ 459 ],
+          "attributes": {
+          }
+        },
+        "$procmux$98_Y": {
+          "hide_name": 1,
+          "bits": [ 450, 451, 452, 453 ],
+          "attributes": {
+          }
+        },
+        "$procmux$99_CMP": {
+          "hide_name": 1,
+          "bits": [ 112 ],
+          "attributes": {
+          }
+        },
+        "ascii_char": {
+          "hide_name": 0,
+          "bits": [ 302, 303, 304, 305, 306, 307, 308, 309 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:110.15-110.25"
+          }
+        },
+        "btn1": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:3.16-3.20"
+          }
+        },
+        "btn2": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:4.16-4.20"
+          }
+        },
+        "calib_btn": {
+          "hide_name": 0,
+          "bits": [ 118 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:17.10-17.19"
+          }
+        },
+        "calib_maxes": {
+          "hide_name": 0,
+          "bits": [ 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:34.18-34.29"
+          }
+        },
+        "calib_mins": {
+          "hide_name": 0,
+          "bits": [ 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:33.18-33.28"
+          }
+        },
+        "captured_val": {
+          "hide_name": 0,
+          "bits": [ 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:108.16-108.28"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:2.16-2.19"
+          }
+        },
+        "is_calibrating": {
+          "hide_name": 0,
+          "bits": [ 119 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:35.10-35.24"
+          }
+        },
+        "led": {
+          "hide_name": 0,
+          "bits": [ "1", "1", "1", "1", "1", 14 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:7.23-7.26"
+          }
+        },
+        "nibble": {
+          "hide_name": 0,
+          "bits": [ 15, 16, 17, 18 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:109.15-109.21"
+          }
+        },
+        "norm_ready": {
+          "hide_name": 0,
+          "bits": [ 845 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:54.10-54.20"
+          }
+        },
+        "norm_vals": {
+          "hide_name": 0,
+          "bits": [ 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:55.18-55.27"
+          }
+        },
+        "raw_ready": {
+          "hide_name": 0,
+          "bits": [ 460 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:20.10-20.19"
+          }
+        },
+        "raw_vals": {
+          "hide_name": 0,
+          "bits": [ 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:21.18-21.26"
+          }
+        },
+        "rst": {
+          "hide_name": 0,
+          "bits": [ 117 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:16.10-16.13"
+          }
+        },
+        "s": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8, 9, 10, 11, 12 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:5.22-5.23"
+          }
+        },
+        "sample_timer": {
+          "hide_name": 0,
+          "bits": [ 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56 ],
+          "attributes": {
+            "init": 0,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:75.16-75.28"
+          }
+        },
+        "state": {
+          "hide_name": 0,
+          "bits": [ 141, 142, 143, 144 ],
+          "attributes": {
+            "init": 0,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:107.15-107.20"
+          }
+        },
+        "stby": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:8.17-8.21"
+          }
+        },
+        "test_signal": {
+          "hide_name": 0,
+          "bits": [ 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:71.17-71.28"
+          }
+        },
+        "trigger_print": {
+          "hide_name": 0,
+          "bits": [ 204 ],
+          "attributes": {
+            "init": 0,
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:76.9-76.22"
+          }
+        },
+        "uart_busy": {
+          "hide_name": 0,
+          "bits": [ 108 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:96.10-96.19"
+          }
+        },
+        "uart_data": {
+          "hide_name": 0,
+          "bits": [ 129, 130, 131, 132, 133, 134, 135, 136 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:95.15-95.24"
+          }
+        },
+        "uart_transmit": {
+          "hide_name": 0,
+          "bits": [ 109 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:94.9-94.22"
+          }
+        },
+        "uart_tx": {
+          "hide_name": 0,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "c:\\Users\\muthu\\OneDrive\\Documents\\OneDrive\\Desktop\\fpga_line_follower\\test\\qtr_normalizer_test_top.v:6.17-6.24"
+          }
+        }
+      }
+    }
+  }
+}
