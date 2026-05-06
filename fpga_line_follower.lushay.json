@@ -7,7 +7,8 @@
         "tb/pwm_tb.v",
         "tb/driver_tb.v",
         "tb/qtr_normalizer_tb.v",
-        "tb/qtr_position_tb.v"
+        "tb/qtr_position_tb.v",
+        "tb/pip_divider_tb.v"
     ],
     "constraintsFile": "tangnano9k.cst",
     "top": "qtr_normalizer_test_top",
