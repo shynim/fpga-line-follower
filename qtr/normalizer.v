@@ -31,8 +31,9 @@ module normalizer (
     reg [5:0] wait_counter;
     
     // Temporary registers for math calculations
-    reg [31:0] raw, min_val, max_val, numerator, denominator;
-    
+    reg [15:0] raw, min_val, max_val;
+    reg [31:0] numerator, denominator;
+
     // Register to remember we're in the middle of processing
     reg processing;
 
@@ -53,7 +54,7 @@ module normalizer (
         
         // Calculate numerator: (raw - min) * 1000
         if (raw > min_val) begin
-            numerator = (raw - min_val) * 1000;
+            numerator = (raw - min_val) << 10;
         end else begin
             numerator = 0;
         end
@@ -120,8 +121,8 @@ module normalizer (
                     end else if (drain_idx < 8) begin
                         // Pipeline is full, results are flowing out
                         // Store the result for current drain_idx
-                        if (div_quotient > 1000) begin
-                            normalized_values[drain_idx*16 +: 16] <= 16'd1000;
+                        if (div_quotient > 1024) begin
+                            normalized_values[drain_idx*16 +: 16] <= 16'd1024;
                         end else begin
                             normalized_values[drain_idx*16 +: 16] <= div_quotient[15:0];
                         end

@@ -103,16 +103,15 @@ module qtr_normalizer_test_top (
         .tx_busy(uart_busy)
     );
 
-    // --- 6. PRINT HEX TO SCREEN ---
+    // --- 6. PRINT HEX TO SCREEN (CORRECTED) ---
     reg [3:0] state = 0;
     reg [15:0] captured_val;
-    reg [3:0] nibble;
-    reg [7:0] ascii_char;
 
-    always @(*) begin
-        if (nibble < 10) ascii_char = nibble + 8'd48; // '0'-'9'
-        else             ascii_char = nibble + 8'd55; // 'A'-'F'
-    end
+    // Calculate ASCII characters instantly without clock delays
+    wire [7:0] char1 = (captured_val[15:12] < 10) ? (captured_val[15:12] + 8'd48) : (captured_val[15:12] + 8'd55);
+    wire [7:0] char2 = (captured_val[11:8] < 10)  ? (captured_val[11:8] + 8'd48)  : (captured_val[11:8] + 8'd55);
+    wire [7:0] char3 = (captured_val[7:4] < 10)   ? (captured_val[7:4] + 8'd48)   : (captured_val[7:4] + 8'd55);
+    wire [7:0] char4 = (captured_val[3:0] < 10)   ? (captured_val[3:0] + 8'd48)   : (captured_val[3:0] + 8'd55);
 
     always @(posedge clk) begin
         if (rst) begin
@@ -127,13 +126,14 @@ module qtr_normalizer_test_top (
                         state <= 1;
                     end
                 end
-                1: if (!uart_busy && !uart_transmit) begin nibble <= captured_val[15:12]; uart_data <= ascii_char; uart_transmit <= 1; state <= 2; end
+                // Directly assign the pre-calculated char wires!
+                1: if (!uart_busy && !uart_transmit) begin uart_data <= char1; uart_transmit <= 1; state <= 2; end
                 2: begin uart_transmit <= 0; if (!uart_busy) state <= 3; end
-                3: if (!uart_busy && !uart_transmit) begin nibble <= captured_val[11:8]; uart_data <= ascii_char; uart_transmit <= 1; state <= 4; end
+                3: if (!uart_busy && !uart_transmit) begin uart_data <= char2; uart_transmit <= 1; state <= 4; end
                 4: begin uart_transmit <= 0; if (!uart_busy) state <= 5; end
-                5: if (!uart_busy && !uart_transmit) begin nibble <= captured_val[7:4]; uart_data <= ascii_char; uart_transmit <= 1; state <= 6; end
+                5: if (!uart_busy && !uart_transmit) begin uart_data <= char3; uart_transmit <= 1; state <= 6; end
                 6: begin uart_transmit <= 0; if (!uart_busy) state <= 7; end
-                7: if (!uart_busy && !uart_transmit) begin nibble <= captured_val[3:0]; uart_data <= ascii_char; uart_transmit <= 1; state <= 8; end
+                7: if (!uart_busy && !uart_transmit) begin uart_data <= char4; uart_transmit <= 1; state <= 8; end
                 8: begin uart_transmit <= 0; if (!uart_busy) state <= 9; end
                 9: if (!uart_busy && !uart_transmit) begin uart_data <= 8'h0D; uart_transmit <= 1; state <= 10; end
                 10: begin uart_transmit <= 0; if (!uart_busy) state <= 11; end
