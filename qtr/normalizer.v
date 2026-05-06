@@ -12,109 +12,131 @@ module normalizer (
 );
 
     // State Machine
-    localparam IDLE      = 2'd0;
-    localparam SETUP_DIV = 2'd1;
-    localparam WAIT_DIV  = 2'd2;
-    localparam DONE      = 2'd3;
+    localparam IDLE      = 3'd0;
+    localparam FEED_PIPE = 3'd1;  // Feeding all 8 divisions into pipeline
+    localparam DRAIN_PIPE = 3'd2; // Collecting results from pipeline
+    localparam DONE      = 3'd3;
 
-    reg [1:0] state = IDLE;
-    reg [3:0] sensor_idx; // Counts 0 to 7 to process each sensor
-
-    // Wires to control our custom sequential divider
-    reg div_start;
-    reg [31:0] div_num;
-    reg [31:0] div_den;
+    reg [2:0] state = IDLE;
+    reg [3:0] feed_idx;    // Index for feeding sensors into pipeline
+    reg [3:0] drain_idx;   // Index for collecting results
+    
+    // Pipeline divider signals
+    reg [31:0] div_dividend;
+    reg [31:0] div_divisor;
     wire [31:0] div_quotient;
     wire [31:0] div_remainder;
-    wire div_ready;
+    
+    // Pipeline wait counter
+    reg [5:0] wait_counter;
+    
+    // Temporary registers for math calculations
+    reg [31:0] raw, min_val, max_val, numerator, denominator;
+    
+    // Register to remember we're in the middle of processing
+    reg processing;
 
-    // Instantiate the custom Sequential Divider you wrote earlier!
-    // Make sure sequential_divider.v is in your src/ folder.
-    seq_divider my_divider (
+    // Instantiate the pipelined divider
+    pip_divider #(.WIDTH(32)) my_pip_divider (
         .clk(clk),
-        .rst(rst),
-        .start(div_start),
-        .num(div_num),
-        .den(div_den),
+        .dividend(div_dividend),
+        .divisor(div_divisor),
         .quotient(div_quotient),
-        .remainder(div_remainder),
-        .ready(div_ready)
+        .remainder(div_remainder)
     );
 
-    // Temporary registers for the math
-    reg [31:0] raw, min_val, max_val, numerator, denominator;
+    // Combinational logic to extract current sensor values
+    always @(*) begin
+        raw     = raw_values[feed_idx*16 +: 16];
+        min_val = min_values[feed_idx*16 +: 16];
+        max_val = max_values[feed_idx*16 +: 16];
+        
+        // Calculate numerator: (raw - min) * 1000
+        if (raw > min_val) begin
+            numerator = (raw - min_val) * 1000;
+        end else begin
+            numerator = 0;
+        end
+
+        // Calculate denominator: (max - min)
+        if (max_val > min_val) begin
+            denominator = max_val - min_val;
+        end else begin
+            denominator = 1; // Avoid division by zero
+        end
+    end
 
     always @(posedge clk) begin
         if (rst) begin
             state <= IDLE;
-            sensor_idx <= 0;
-            div_start <= 0;
+            feed_idx <= 0;
+            drain_idx <= 0;
+            wait_counter <= 0;
+            processing <= 0;
             norm_ready <= 0;
             normalized_values <= 128'd0;
+            div_dividend <= 0;
+            div_divisor <= 1;
         end else begin
             case (state)
                 IDLE: begin
                     norm_ready <= 0;
-                    div_start <= 0;
-                    // Wait until Module 1 shouts that fresh data is ready
-                    if (data_ready) begin
-                        sensor_idx <= 0;
-                        state <= SETUP_DIV;
-                    end
-                end
-
-                SETUP_DIV: begin
-                    // 1. Extract the specific 16-bit slice for the current sensor
-                    raw     = raw_values[sensor_idx*16 +: 16];
-                    min_val = min_values[sensor_idx*16 +: 16];
-                    max_val = max_values[sensor_idx*16 +: 16];
-
-                    // 2. Perform Subtraction & Multiplication (Numerator: Raw - Min)
-                    // If raw is lower than our calibrated min, treat it as 0 to prevent negative math
-                    if (raw > min_val) begin
-                        numerator = (raw - min_val) * 1000; 
-                    end else begin
-                        numerator = 0; 
-                    end
-
-                    // 3. Perform Subtraction (Denominator: Max - Min)
-                    if (max_val > min_val) begin
-                        denominator = max_val - min_val;
-                    end else begin
-                        denominator = 1; // NEVER divide by zero!
-                    end
-
-                    // 4. Load the numbers into the hardware divider and pulse start
-                    div_num <= numerator;
-                    div_den <= denominator;
-                    div_start <= 1;
-                    state <= WAIT_DIV;
-                end
-
-                WAIT_DIV: begin
-                    div_start <= 0; // Turn off the start pulse
+                    feed_idx <= 0;
+                    drain_idx <= 0;
+                    wait_counter <= 0;
+                    processing <= 0;
                     
-                    // Wait for the divider to finish its 32 clock cycles
-                    if (div_ready) begin
-                        // Clamp the result to a maximum of 1000 just in case
-                        if (div_quotient > 1000) begin
-                            normalized_values[sensor_idx*16 +: 16] <= 16'd1000;
-                        end else begin
-                            normalized_values[sensor_idx*16 +: 16] <= div_quotient[15:0];
-                        end
+                    if (data_ready) begin
+                        processing <= 1;
+                        state <= FEED_PIPE;
+                    end
+                end
 
-                        // Move to the next sensor, or finish if we did all 8
-                        if (sensor_idx == 7) begin
-                            state <= DONE;
+                FEED_PIPE: begin
+                    // Feed all 8 sensors into the pipeline, one per clock cycle
+                    if (feed_idx < 8) begin
+                        div_dividend <= numerator;
+                        div_divisor <= denominator;
+                        
+                        feed_idx <= feed_idx + 1;
+                        
+                        // After feeding the 8th value, transition to drain
+                        if (feed_idx == 7) begin
+                            // FIX: 24 cycles + 2 cycles for register delays = 26
+                            wait_counter <= 6'd26; 
+                            state <= DRAIN_PIPE;
+                        end
+                    end else begin
+                        // Safety: if feed_idx somehow goes past 7
+                        wait_counter <= 6'd26;
+                        state <= DRAIN_PIPE;
+                    end
+                end
+
+                DRAIN_PIPE: begin
+                    if (wait_counter > 0) begin
+                        // Still waiting for pipeline to fill
+                        wait_counter <= wait_counter - 1;
+                    end else if (drain_idx < 8) begin
+                        // Pipeline is full, results are flowing out
+                        // Store the result for current drain_idx
+                        if (div_quotient > 1000) begin
+                            normalized_values[drain_idx*16 +: 16] <= 16'd1000;
                         end else begin
-                            sensor_idx <= sensor_idx + 1;
-                            state <= SETUP_DIV;
+                            normalized_values[drain_idx*16 +: 16] <= div_quotient[15:0];
+                        end
+                        drain_idx <= drain_idx + 1;
+                        
+                        // Check if we've collected all 8 results
+                        if (drain_idx == 7) begin
+                            state <= DONE;
                         end
                     end
                 end
 
                 DONE: begin
-                    norm_ready <= 1; // Tell the final Position Calculator the data is clean!
+                    norm_ready <= 1;
+                    processing <= 0;
                     state <= IDLE;
                 end
             endcase
