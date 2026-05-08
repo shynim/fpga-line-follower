@@ -10,7 +10,8 @@
         "tb/qtr_position_tb.v",
         "tb/pip_divider_tb.v",
         "tb/pid_tb.v",
-        "tb/apply_pid_tb.v"
+        "tb/apply_pid_tb.v",
+        "tb/position_to_speed_tb.v"
     ],
     "constraintsFile": "tangnano9k.cst",
     "top": "qtr_position_test_top",

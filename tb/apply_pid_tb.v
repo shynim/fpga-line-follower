@@ -68,13 +68,12 @@ module test;
         rst = 0;
         #20;
 
-        $display("--- Starting Motor Mixer Test ---");
+        $display("--- Starting Motor Mixer Test (NO REVERSE) ---");
         $display("Base Speed = 100 | Shift = 6 (Divide by 64)");
-        $display("Dir Legend: 00=Stop, 01=Fwd, 10=Rev");
+        $display("Dir Legend: 00=Stop, 01=Fwd");
         $display("---------------------------------------------------------");
 
         // TEST 1: Driving Straight
-        // Steer: 0. 
         // Expected: Left 100 (Fwd), Right 100 (Fwd)
         send_steer(16'sd0);
 
@@ -88,18 +87,18 @@ module test;
         // Expected: Left 80 (Fwd), Right 120 (Fwd)
         send_steer(-16'sd1280);
 
-        // TEST 4: Hard Right Turn (Drops a wheel into reverse!)
+        // TEST 4: Hard Right Turn (One wheel stops!)
         // Steer: +12800 (12800 / 64 = 200).
         // Left math: 100 + 200 = 300 (Clamps to 255!)
-        // Right math: 100 - 200 = -100 (Becomes +100 in Reverse!)
-        // Expected: Left 255 (Fwd 01), Right 100 (Rev 10)
+        // Right math: 100 - 200 = -100 (NEW LOGIC: Clamps to 0 Stop!)
+        // Expected: Left 255 (Fwd 01), Right 0 (Stop 00)
         send_steer(16'sd12800);
 
-        // TEST 5: Extreme Left Turn (Both wheels maxed out!)
+        // TEST 5: Extreme Left Turn (Both wheels maxed/stopped!)
         // Steer: -32000 (-32000 / 64 = -500).
-        // Left math: 100 - 500 = -400 (Clamps to 255 Reverse!)
+        // Left math: 100 - 500 = -400 (NEW LOGIC: Clamps to 0 Stop!)
         // Right math: 100 + 500 = 600 (Clamps to 255 Forward!)
-        // Expected: Left 255 (Rev 10), Right 255 (Fwd 01)
+        // Expected: Left 0 (Stop 00), Right 255 (Fwd 01)
         send_steer(-16'sd32000);
 
         $display("---------------------------------------------------------");

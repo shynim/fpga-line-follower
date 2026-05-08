@@ -6,8 +6,8 @@ module test;
     reg rst;
     reg pos_ready;
     reg [15:0] position;
-    reg [7:0] kp;
-    reg [7:0] kd;
+    reg [15:0] kp;
+    reg [15:0] kd;
 
     wire signed [15:0] steering_correction;
     wire steer_ready;
@@ -59,8 +59,8 @@ module test;
         position = 3500;
         
         // Let's test with Kp = 2, Kd = 5
-        kp = 8'd2; 
-        kd = 8'd5; 
+        kp = 16'd32; 
+        kd = 16'd80; 
 
         // Hold reset for 100ns
         #100;

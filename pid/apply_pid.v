@@ -35,40 +35,32 @@ module apply_pid #(
             left_raw  = $signed({1'b0, BASE_SPEED}) + scaled_steer;
             right_raw = $signed({1'b0, BASE_SPEED}) - scaled_steer;
 
-            // 3. CLAMP & DIRECTION: Left Motor (Motor A)
+            // 3. CLAMP: Left Motor (Motor A)
             if (left_raw > 255) begin
                 speed_a <= 8'd255;      // CLAMP MAX FORWARD
-                dir_a <= 2'b01; 
+                dir_a <= 2'b01;         // Forward
             end else if (left_raw > 0) begin
                 speed_a <= left_raw[7:0]; // Normal Forward
-                dir_a <= 2'b01; 
-            end else if (left_raw < -255) begin
-                speed_a <= 8'd255;      // CLAMP MAX REVERSE
-                dir_a <= 2'b10; 
-            end else if (left_raw < 0) begin
-                speed_a <= -left_raw[7:0]; // Normal Reverse
-                dir_a <= 2'b10; 
+                dir_a <= 2'b01;         // Forward
+            
+            // --- THE NEW NO-REVERSE LOGIC ---
             end else begin
-                speed_a <= 0;
-                dir_a <= 2'b00; // Stop
+                speed_a <= 0;           // CLAMP TO ZERO
+                dir_a <= 2'b00;         // Stop (or Free-wheel)
             end
-
-            // 4. CLAMP & DIRECTION: Right Motor (Motor B)
+            
+            // 4. CLAMP: Right Motor (Motor B)
             if (right_raw > 255) begin
                 speed_b <= 8'd255;      // CLAMP MAX FORWARD
-                dir_b <= 2'b01; 
+                dir_b <= 2'b01;         // Forward
             end else if (right_raw > 0) begin
                 speed_b <= right_raw[7:0]; // Normal Forward
-                dir_b <= 2'b01; 
-            end else if (right_raw < -255) begin
-                speed_b <= 8'd255;      // CLAMP MAX REVERSE
-                dir_b <= 2'b10; 
-            end else if (right_raw < 0) begin
-                speed_b <= -right_raw[7:0]; // Normal Reverse
-                dir_b <= 2'b10; 
+                dir_b <= 2'b01;         // Forward
+                
+            // --- THE NEW NO-REVERSE LOGIC ---
             end else begin
-                speed_b <= 0;
-                dir_b <= 2'b00; // Stop
+                speed_b <= 0;           // CLAMP TO ZERO
+                dir_b <= 2'b00;         // Stop (or Free-wheel)
             end
             
         end

@@ -4,9 +4,9 @@ module pid (
     input wire pos_ready,             // From the position module
     input wire [15:0] position,       // 0 to 7000 (Unsigned)
 
-    // PID Tuning Parameters (We can hardcode these or hook them to UART later)
-    input wire [7:0] kp,              
-    input wire [7:0] kd,              
+    // PID Tuning Parameters (Now 16-bit for Fixed-Point Math!)
+    input wire [15:0] kp,              
+    input wire [15:0] kd,              
 
     output reg signed [15:0] steering_correction, // The final output! (Signed)
     output reg steer_ready
@@ -20,12 +20,13 @@ module pid (
     reg [1:0] state = IDLE;
 
     // --- SIGNED MATH REGISTERS ---
-    // We MUST use the 'signed' keyword so the FPGA knows these can be negative
     reg signed [15:0] current_error;
     reg signed [15:0] last_error;
-    reg signed [15:0] p_term;
-    reg signed [15:0] d_term;
     reg signed [15:0] error_diff;
+
+    // UPGRADED to 32-bit so the multiplication doesn't overflow before we divide!
+    reg signed [31:0] p_term;
+    reg signed [31:0] d_term;
 
     // A wire to safely cast the unsigned position (0-7000) into a signed number
     wire signed [16:0] signed_pos = {1'b0, position}; 
@@ -38,6 +39,8 @@ module pid (
             last_error <= 0;
             steering_correction <= 0;
             steer_ready <= 0;
+            p_term <= 0;
+            d_term <= 0;
         end else begin
             case (state)
                 IDLE: begin
@@ -51,19 +54,19 @@ module pid (
 
                 CALC: begin
                     // 2. Calculate P-Term (Error * Kp)
-                    // We cast kp to signed so the math works perfectly
-                    p_term <= current_error * $signed({1'b0, kp});
+                    // Multiply first (creating a huge number), then shift right by 4 (divide by 16)
+                    p_term <= (current_error * $signed({1'b0, kp})) >>> 4;
 
                     // 3. Calculate D-Term ((Error - Last Error) * Kd)
                     error_diff = current_error - last_error;
-                    d_term <= error_diff * $signed({1'b0, kd});
+                    d_term <= (error_diff * $signed({1'b0, kd})) >>> 4;
 
                     state <= DONE;
                 end
 
                 DONE: begin
-                    // 4. Add them together for the final steering correction!
-                    steering_correction <= p_term + d_term;
+                    // 4. Add them together and cast back to 16-bit for the final steering correction!
+                    steering_correction <= p_term[15:0] + d_term[15:0];
                     
                     // 5. Save the current error to become the "last error" for the next loop
                     last_error <= current_error;
