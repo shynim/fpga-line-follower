@@ -21,25 +21,25 @@ module normalizer (
     reg [3:0] feed_idx;    // Index for feeding sensors into pipeline
     reg [3:0] drain_idx;   // Index for collecting results
     
-    // Pipeline divider signals
-    reg [31:0] div_dividend;
-    reg [31:0] div_divisor;
-    wire [31:0] div_quotient;
-    wire [31:0] div_remainder;
+    // Pipeline divider signals (Trimmed to 24 bits to save space!)
+    reg [23:0] div_dividend;
+    reg [23:0] div_divisor;
+    wire [23:0] div_quotient;
+    wire [23:0] div_remainder;
     
     // Pipeline wait counter
     reg [5:0] wait_counter;
     
     // Temporary registers for math calculations
     reg [15:0] raw, min_val, max_val;
-    reg [15:0] diff_16; // ADDED: Forces the subtraction to be exactly 16-bit
+    reg [15:0] diff_16; // Forces the subtraction to be exactly 16-bit
     reg [31:0] numerator, denominator;
 
     // Register to remember we're in the middle of processing
     reg processing;
 
-    // Instantiate the pipelined divider
-    pip_divider #(.WIDTH(32)) my_pip_divider (
+    // Instantiate the pipelined divider (Trimmed to 24-bit width)
+    pip_divider #(.WIDTH(24)) my_pip_divider (
         .clk(clk),
         .dividend(div_dividend),
         .divisor(div_divisor),
@@ -102,19 +102,20 @@ module normalizer (
                 FEED_PIPE: begin
                     // Feed all 8 sensors into the pipeline, one per clock cycle
                     if (feed_idx < 8) begin
-                        div_dividend <= numerator;
-                        div_divisor <= denominator;
+                        div_dividend <= numerator[23:0]; // Cast to 24-bit
+                        div_divisor <= denominator[23:0]; // Cast to 24-bit
                         
                         feed_idx <= feed_idx + 1;
                         
                         // After feeding the 8th value, transition to drain
                         if (feed_idx == 7) begin
-                            wait_counter <= 6'd26; 
+                            // FIX: 24 pipeline stages - 8 cycles + 2 reg delays = 18
+                            wait_counter <= 6'd18; 
                             state <= DRAIN_PIPE;
                         end
                     end else begin
                         // Safety: if feed_idx somehow goes past 7
-                        wait_counter <= 6'd26;
+                        wait_counter <= 6'd18;
                         state <= DRAIN_PIPE;
                     end
                 end
