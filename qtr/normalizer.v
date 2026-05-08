@@ -32,6 +32,7 @@ module normalizer (
     
     // Temporary registers for math calculations
     reg [15:0] raw, min_val, max_val;
+    reg [15:0] diff_16; // ADDED: Forces the subtraction to be exactly 16-bit
     reg [31:0] numerator, denominator;
 
     // Register to remember we're in the middle of processing
@@ -52,12 +53,17 @@ module normalizer (
         min_val = min_values[feed_idx*16 +: 16];
         max_val = max_values[feed_idx*16 +: 16];
         
-        // Calculate numerator: (raw - min) * 1000
+        // --- THE DSP MULTIPLIER TRICK ---
+        // 1. Calculate the difference as a strict 16-bit number
         if (raw > min_val) begin
-            numerator = (raw - min_val) << 10;
+            diff_16 = raw - min_val;
         end else begin
-            numerator = 0;
+            diff_16 = 16'd0;
         end
+
+        // 2. 16-bit * 16-bit multiplication maps perfectly to the MULT18X18 hardware block!
+        numerator = diff_16 * 16'd1000; 
+        // --------------------------------
 
         // Calculate denominator: (max - min)
         if (max_val > min_val) begin
@@ -103,7 +109,6 @@ module normalizer (
                         
                         // After feeding the 8th value, transition to drain
                         if (feed_idx == 7) begin
-                            // FIX: 24 cycles + 2 cycles for register delays = 26
                             wait_counter <= 6'd26; 
                             state <= DRAIN_PIPE;
                         end
@@ -121,8 +126,8 @@ module normalizer (
                     end else if (drain_idx < 8) begin
                         // Pipeline is full, results are flowing out
                         // Store the result for current drain_idx
-                        if (div_quotient > 1024) begin
-                            normalized_values[drain_idx*16 +: 16] <= 16'd1024;
+                        if (div_quotient > 1000) begin
+                            normalized_values[drain_idx*16 +: 16] <= 16'd1000;
                         end else begin
                             normalized_values[drain_idx*16 +: 16] <= div_quotient[15:0];
                         end

@@ -41,7 +41,13 @@ module position (
         .ready(div_ready)
     );
 
-    reg [31:0] current_val;
+    // --- THE DSP MULTIPLIER TRICK ---
+    // We pull these out into combinational wires so they evaluate instantly 
+    // as strict 16-bit values based on the current 'idx'. 
+    // This forces Yosys to map the math below to the MULT18X18 block!
+    wire [15:0] current_val_16 = normalized_values[idx*16 +: 16];
+    wire [15:0] weight_16      = idx * 16'd1000; 
+    // --------------------------------
 
     always @(posedge clk) begin
         if (rst) begin
@@ -64,14 +70,13 @@ module position (
                 end
 
                 ACCUMULATE: begin
-                    current_val = normalized_values[idx*16 +: 16];
-                    
                     // Noise Filter: We only care about sensors that actually see a line.
                     // If a sensor's value is < 50, it's just background noise. Ignore it.
-                    if (current_val > 50) begin
+                    if (current_val_16 > 50) begin
                         // Add to our weighted average totals
-                        weighted_sum <= weighted_sum + (current_val * idx * 1000);
-                        total_sum <= total_sum + current_val;
+                        // 16-bit * 16-bit maps perfectly to the DSP multiplier!
+                        weighted_sum <= weighted_sum + (current_val_16 * weight_16);
+                        total_sum <= total_sum + current_val_16;
                     end
 
                     // Move to the next sensor, or proceed to math
