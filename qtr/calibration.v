@@ -10,7 +10,6 @@ module qtr_calibration (
     output reg [127:0] max_values,
     output reg is_calibrating         // Wire this to an LED on your board!
 );
-
     // State Machine Definitions
     localparam STATE_IDLE        = 2'd0;
     localparam STATE_WAIT        = 2'd1;
@@ -18,19 +17,18 @@ module qtr_calibration (
     localparam STATE_DONE        = 2'd3;
 
     reg [1:0] state = STATE_IDLE;
-
+    
     // Timing Constants for 27 MHz Clock
-    parameter ONE_SECOND_TICKS = 32'd27_000_000; 
+    parameter ONE_SECOND_TICKS = 32'd27_000_000;
     parameter TICKS_PER_MS     = 32'd27_000;
 
     reg [31:0] timer;
     reg button_prev; 
-    reg [15:0] current_val;
     integer i;
-
+    
     // Edge detector: triggers only once exactly when the button is pushed down
     wire button_pressed = (btn2 == 1'b1 && button_prev == 1'b0);
-
+    
     always @(posedge clk) begin
         if (rst) begin
             state <= STATE_IDLE;
@@ -46,7 +44,7 @@ module qtr_calibration (
         end else begin
             // Keep track of the button's previous state for the edge detector
             button_prev <= btn2;
-
+            
             case (state)
                 STATE_IDLE: begin
                     is_calibrating <= 0;
@@ -65,8 +63,7 @@ module qtr_calibration (
                         timer <= 0;
                         is_calibrating <= 1'b1; // Turn on the LED!
                         
-                        // We must reset the arrays BEFORE taking new readings, 
-                        // otherwise old calibrations will pollute the new ones.
+                        // Reset the arrays BEFORE taking new readings
                         for (i = 0; i < 8; i = i + 1) begin
                             min_values[i*16 +: 16] <= 16'hFFFF;
                             max_values[i*16 +: 16] <= 16'h0000;
@@ -75,26 +72,22 @@ module qtr_calibration (
                 end
 
                 STATE_CALIBRATING: begin
-                    // Keep counting time to see when calibration should end
                     timer <= timer + 1;
                     
-                    // If we get fresh data from Module 1, update the min/max arrays
+                    // FIX: Removed blocking assignment 'current_val' 
+                    // and comparing array slices directly.
                     if (data_ready) begin
                         for (i = 0; i < 8; i = i + 1) begin
-                            current_val = sensor_values[i*16 +: 16];
-                            
-                            if (current_val < min_values[i*16 +: 16]) begin
-                                min_values[i*16 +: 16] <= current_val;
+                            if (sensor_values[i*16 +: 16] < min_values[i*16 +: 16]) begin
+                                min_values[i*16 +: 16] <= sensor_values[i*16 +: 16];
                             end
                             
-                            if (current_val > max_values[i*16 +: 16]) begin
-                                max_values[i*16 +: 16] <= current_val;
+                            if (sensor_values[i*16 +: 16] > max_values[i*16 +: 16]) begin
+                                max_values[i*16 +: 16] <= sensor_values[i*16 +: 16];
                             end
                         end
                     end
 
-                    // Check if our adjustable timer has expired
-                    // Target ticks = (Milliseconds * 27,000)
                     if (timer >= (calib_time_ms * TICKS_PER_MS)) begin
                         state <= STATE_DONE;
                         is_calibrating <= 0; // Turn off the LED
@@ -102,8 +95,6 @@ module qtr_calibration (
                 end
 
                 STATE_DONE: begin
-                    // Do nothing with the data, just hold the locked min/max values forever.
-                    // If the user pushes the button again, restart the 1-second timer!
                     if (button_pressed) begin
                         state <= STATE_WAIT;
                         timer <= 0;
