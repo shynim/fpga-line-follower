@@ -10,36 +10,34 @@ module normalizer (
     output reg [127:0] normalized_values,
     output reg norm_ready              // Pulses high when all 8 sensors are scaled
 );
-
     // State Machine
     localparam IDLE      = 3'd0;
-    localparam FEED_PIPE = 3'd1;  // Feeding all 8 divisions into pipeline
-    localparam DRAIN_PIPE = 3'd2; // Collecting results from pipeline
+    localparam FEED_PIPE = 3'd1;       // Feeding all 8 divisions into pipeline
+    localparam DRAIN_PIPE = 3'd2;      // Collecting results from pipeline
     localparam DONE      = 3'd3;
 
     reg [2:0] state = IDLE;
     reg [3:0] feed_idx;    // Index for feeding sensors into pipeline
     reg [3:0] drain_idx;   // Index for collecting results
     
-    // Pipeline divider signals (Trimmed to 24 bits to save space!)
-    reg [23:0] div_dividend;
-    reg [23:0] div_divisor;
-    wire [23:0] div_quotient;
-    wire [23:0] div_remainder;
+    // Pipeline divider signals (Bumped to 26 bits to prevent overflow)
+    reg [25:0] div_dividend;
+    reg [25:0] div_divisor;
+    wire [25:0] div_quotient;
+    wire [25:0] div_remainder;
     
     // Pipeline wait counter
     reg [5:0] wait_counter;
-    
+
     // Temporary registers for math calculations
     reg [15:0] raw, min_val, max_val;
-    reg [15:0] diff_16; // Forces the subtraction to be exactly 16-bit
+    reg [15:0] diff_16;                // Forces the subtraction to be exactly 16-bit
     reg [31:0] numerator, denominator;
+    
+    reg processing;                    // Register to remember we're in the middle of processing
 
-    // Register to remember we're in the middle of processing
-    reg processing;
-
-    // Instantiate the pipelined divider (Trimmed to 24-bit width)
-    pip_divider #(.WIDTH(24)) my_pip_divider (
+    // Instantiate the pipelined divider (26-bit width)
+    pip_divider #(.WIDTH(26)) my_pip_divider (
         .clk(clk),
         .dividend(div_dividend),
         .divisor(div_divisor),
@@ -52,7 +50,7 @@ module normalizer (
         raw     = raw_values[feed_idx*16 +: 16];
         min_val = min_values[feed_idx*16 +: 16];
         max_val = max_values[feed_idx*16 +: 16];
-        
+
         // --- THE DSP MULTIPLIER TRICK ---
         // 1. Calculate the difference as a strict 16-bit number
         if (raw > min_val) begin
@@ -69,7 +67,7 @@ module normalizer (
         if (max_val > min_val) begin
             denominator = max_val - min_val;
         end else begin
-            denominator = 1; // Avoid division by zero
+            denominator = 1;           // Avoid division by zero
         end
     end
 
@@ -92,7 +90,6 @@ module normalizer (
                     drain_idx <= 0;
                     wait_counter <= 0;
                     processing <= 0;
-                    
                     if (data_ready) begin
                         processing <= 1;
                         state <= FEED_PIPE;
@@ -102,20 +99,19 @@ module normalizer (
                 FEED_PIPE: begin
                     // Feed all 8 sensors into the pipeline, one per clock cycle
                     if (feed_idx < 8) begin
-                        div_dividend <= numerator[23:0]; // Cast to 24-bit
-                        div_divisor <= denominator[23:0]; // Cast to 24-bit
+                        div_dividend <= numerator[25:0];   // Cast to 26-bit
+                        div_divisor <= denominator[25:0];  // Cast to 26-bit
                         
                         feed_idx <= feed_idx + 1;
-                        
                         // After feeding the 8th value, transition to drain
                         if (feed_idx == 7) begin
-                            // FIX: 24 pipeline stages - 8 cycles + 2 reg delays = 18
-                            wait_counter <= 6'd18; 
+                            // FIX: 27 pipeline latency - 7 cycles feeding = 20 cycles
+                            wait_counter <= 6'd20; 
                             state <= DRAIN_PIPE;
                         end
                     end else begin
                         // Safety: if feed_idx somehow goes past 7
-                        wait_counter <= 6'd18;
+                        wait_counter <= 6'd20;
                         state <= DRAIN_PIPE;
                     end
                 end
