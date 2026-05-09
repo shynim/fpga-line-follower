@@ -1,15 +1,16 @@
-module seq_divider (
+module seq_divider #(
+    parameter WIDTH = 32 // Default to 32 bits, but easily overridable!
+)(
     input wire clk,
     input wire rst,
     input wire start,           // Pulse high to start the calculation
-    input wire [31:0] num,      // Numerator (The top number)
-    input wire [31:0] den,      // Denominator (The bottom number)
+    input wire [WIDTH-1:0] num, // Numerator
+    input wire [WIDTH-1:0] den, // Denominator
     
-    output reg [31:0] quotient, // The result of the division
-    output reg [31:0] remainder,// The leftover part
+    output reg [WIDTH-1:0] quotient, 
+    output reg [WIDTH-1:0] remainder,
     output reg ready            // Pulses high when math is finished
 );
-
     // State Machine
     localparam IDLE   = 2'd0;
     localparam DIVIDE = 2'd1;
@@ -17,9 +18,12 @@ module seq_divider (
 
     reg [1:0] state = IDLE;
     
-    reg [5:0] count;
-    reg [63:0] divisor;
-    reg [63:0] dividend;
+    // A 6-bit counter safely supports division up to 63-bits wide
+    reg [5:0] count; 
+    
+    // Internal shift registers must be exactly double the width
+    reg [(WIDTH*2)-1:0] divisor;
+    reg [(WIDTH*2)-1:0] dividend;
 
     always @(posedge clk) begin
         if (rst) begin
@@ -33,17 +37,20 @@ module seq_divider (
                 IDLE: begin
                     ready <= 0;
                     if (start) begin
-                        // Prevent dividing by zero (which would crash the math)
                         if (den == 0) begin
-                            quotient <= 32'hFFFFFFFF; // Output max value on error
+                            // Output max value (all 1s) on divide-by-zero error
+                            quotient <= {WIDTH{1'b1}}; 
                             remainder <= 0;
-                            ready <= 1; // Finish instantly
+                            ready <= 1; 
                         end else begin
                             // Setup the binary long division
-                            // We use 64-bit registers to have room to shift the 32-bit numbers
-                            dividend <= {32'd0, num};       // Numerator in lower half
-                            divisor  <= {den, 32'd0};       // Denominator in upper half
-                            count    <= 6'd32;              // We must shift 32 times
+                            // Pad the upper half with zeros, and load the numerator in the lower half
+                            dividend <= { {WIDTH{1'b0}}, num }; 
+                            
+                            // Load the denominator in the upper half, pad lower with zeros
+                            divisor  <= { den, {WIDTH{1'b0}} }; 
+                            
+                            count    <= WIDTH[5:0]; // Shift exactly 'WIDTH' times
                             state    <= DIVIDE;
                         end
                     end
@@ -52,14 +59,12 @@ module seq_divider (
                 DIVIDE: begin
                     // Hardware Long Division Algorithm
                     if (count > 0) begin
-                        // Shift the dividend left by 1. 
-                        // If the upper half is now bigger than our divisor, we can subtract!
                         if ((dividend << 1) >= divisor) begin
                             // Subtract the divisor, and add 1 to the bottom bit (our quotient)
-                            dividend <= (dividend << 1) - divisor + 1; 
+                            dividend <= (dividend << 1) - divisor + 1;
                         end else begin
                             // Too small to subtract, just shift it
-                            dividend <= (dividend << 1);               
+                            dividend <= (dividend << 1);
                         end
                         count <= count - 1;
                     end else begin
@@ -68,11 +73,12 @@ module seq_divider (
                 end
 
                 DONE: begin
-                    // The division is over! 
-                    // The lower 32 bits mathematically become our answer.
-                    // The upper 32 bits mathematically become the remainder.
-                    quotient <= dividend[31:0];
-                    remainder <= dividend[63:32];
+                    // The lower half mathematically becomes our answer
+                    quotient <= dividend[WIDTH-1:0];
+                    
+                    // The upper half mathematically becomes the remainder
+                    remainder <= dividend[(WIDTH*2)-1:WIDTH];
+                    
                     ready <= 1;
                     state <= IDLE;
                 end
