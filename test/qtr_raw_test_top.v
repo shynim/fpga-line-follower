@@ -78,62 +78,68 @@ module qtr_raw_test_top (
                 0: begin
                     uart_transmit <= 0;
                     if (trigger_print) begin
-                        captured_val <= test_signal; 
+                        captured_val <= test_signal;
+                        nibble <= test_signal[15:12]; // PRE-LOAD the first nibble here
                         state <= 1;
                     end
                 end
 
                 // Print Char 1 (Highest 4 bits)
                 1: if (!uart_busy && !uart_transmit) begin
-                    nibble <= captured_val[15:12];
-                    uart_data <= ascii_char;
+                    uart_data <= ascii_char; // ascii_char is now valid!
                     uart_transmit <= 1;
+                    nibble <= captured_val[11:8]; // PRE-LOAD Char 2
                     state <= 2;
                 end
-                2: begin uart_transmit <= 0; if (!uart_busy) state <= 3; end
+                2: begin uart_transmit <= 0;
+                    if (!uart_busy) state <= 3; end
 
                 // Print Char 2
                 3: if (!uart_busy && !uart_transmit) begin
-                    nibble <= captured_val[11:8];
-                    uart_data <= ascii_char;
+                    uart_data <= ascii_char; 
                     uart_transmit <= 1;
+                    nibble <= captured_val[7:4]; // PRE-LOAD Char 3
                     state <= 4;
                 end
-                4: begin uart_transmit <= 0; if (!uart_busy) state <= 5; end
+                4: begin uart_transmit <= 0;
+                    if (!uart_busy) state <= 5; end
 
                 // Print Char 3
                 5: if (!uart_busy && !uart_transmit) begin
-                    nibble <= captured_val[7:4];
                     uart_data <= ascii_char;
                     uart_transmit <= 1;
+                    nibble <= captured_val[3:0]; // PRE-LOAD Char 4
                     state <= 6;
                 end
-                6: begin uart_transmit <= 0; if (!uart_busy) state <= 7; end
+                6: begin uart_transmit <= 0;
+                    if (!uart_busy) state <= 7; end
 
                 // Print Char 4 (Lowest 4 bits)
                 7: if (!uart_busy && !uart_transmit) begin
-                    nibble <= captured_val[3:0];
-                    uart_data <= ascii_char;
+                    uart_data <= ascii_char; 
                     uart_transmit <= 1;
                     state <= 8;
                 end
-                8: begin uart_transmit <= 0; if (!uart_busy) state <= 9; end
+                8: begin uart_transmit <= 0;
+                    if (!uart_busy) state <= 9; end
 
                 // Print Carriage Return (\r)
                 9: if (!uart_busy && !uart_transmit) begin
-                    uart_data <= 8'h0D; 
+                    uart_data <= 8'h0D;
                     uart_transmit <= 1;
                     state <= 10;
                 end
-                10: begin uart_transmit <= 0; if (!uart_busy) state <= 11; end
+                10: begin uart_transmit <= 0;
+                    if (!uart_busy) state <= 11; end
 
                 // Print New Line (\n)
                 11: if (!uart_busy && !uart_transmit) begin
-                    uart_data <= 8'h0A; 
+                    uart_data <= 8'h0A;
                     uart_transmit <= 1;
                     state <= 12;
                 end
-                12: begin uart_transmit <= 0; if (!uart_busy) state <= 0; end
+                12: begin uart_transmit <= 0;
+                    if (!uart_busy) state <= 0; end
             endcase
         end
     end
