@@ -14,7 +14,7 @@
         "tb/position_to_speed_tb.v"
     ],
     "constraintsFile": "tangnano9k.cst",
-    "top": "qtr_position_test_top",
+    "top": "qtr_motor_test_top",
     "board": "tangnano9k",
     "programMode": "ram"
     

@@ -8,7 +8,6 @@ module apply_pid #(
     input wire steer_ready,
     input wire signed [15:0] steering_correction,
 
-    // Outputs that perfectly match your UNTOUCHED driver.v inputs!
     output reg [7:0] speed_a,
     output reg [7:0] speed_b,
     output reg [1:0] dir_a,
