@@ -8,7 +8,11 @@ module test;
     reg pos_ready;
     reg [15:0] position;
     
-    // Fixed-Point Tuning (Base Speed 100, Kp=2.0, Kd=5.0)
+    // NEW: Dynamic Speed Registers for testing!
+    reg [7:0] base_speed;
+    reg [7:0] max_speed;
+    
+    // Fixed-Point Tuning (Kp=2.0, Kd=5.0)
     // Formula: Value * 16
     wire [15:0] kp = 16'd32; // 2.0 * 16
     wire [15:0] kd = 16'd80; // 5.0 * 16
@@ -30,13 +34,18 @@ module test;
     );
 
     // --- 2. INSTANTIATE MIXER ---
+    // FIX: Removed BASE_SPEED parameter!
     apply_pid #(
-        .BASE_SPEED(8'd100),
         .SHIFT(3'd6) // Divide PID by 64
     ) spinal_cord (
         .clk(clk), .rst(rst),
         .steer_ready(steer_ready),
         .steering_correction(steer_out),
+        
+        // FIX: Plug in our live dynamic speeds!
+        .base_speed(base_speed),
+        .max_speed(max_speed),
+        
         .speed_a(speed_a), .speed_b(speed_b),
         .dir_a(dir_a), .dir_b(dir_b)
     );
@@ -80,10 +89,15 @@ module test;
 
     initial begin
         clk = 0; rst = 1; pos_ready = 0;
+        
+        // Initialize our live speeds to standard defaults
+        base_speed = 8'd100;
+        max_speed = 8'd255;
+        
         #100 rst = 0;
 
         $display("=========================================================");
-        $display("      FULL SYSTEM CONTROL TEST (NO REVERSE)");
+        $display("      FULL SYSTEM CONTROL TEST (DYNAMIC SPEEDS)");
         $display("=========================================================");
 
         // 1. Perfect Center: Error 0 -> Both motors Base Speed (100)
@@ -95,11 +109,25 @@ module test;
 
         // 3. Hard Left: Error -3500. (Last Error was 100, Massive D-Term!)
         // Total Steer = -25000. Mixer = -391. 
-        // L = 100 + (-391) = -291 -> NEW LOGIC: Clamps to 0 (Stop 00)
+        // L = 100 + (-391) = -291 -> Clamps to 0 (Stop 00)
         // R = 100 - (-391) = 491  -> Clamps to 255 (Fwd 01)
-        
-        // Notice the expected values here are now 0 and 2'b00 for Motor A!
         check_system("Hard Left", 0, 0, 2'b00, 255, 2'b01);
+
+        $display("=========================================================");
+        $display("      TESTING LIVE SPEED ADJUSTMENT");
+        $display("=========================================================");
+
+        // Lower the max speed dynamically!
+        @(posedge clk); #1;
+        max_speed = 8'd150;
+        $display(">>> LIVE UPDATE: Max Speed capped to 150! <<<");
+
+        // 4. Hard Left (Repeated, but with new max limit)
+        // Last error was -3500. Current is -3500. Diff = 0.
+        // P = -3500 * 2 = -7000. D = 0. Total Steer = -7000. Mixer = -109.
+        // L = 100 + (-109) = -9  -> Clamps to 0 (Stop 00)
+        // R = 100 - (-109) = 209 -> NEW LOGIC: Clamps to 150 instead of 255!
+        check_system("Hard Left Capped", 0, 0, 2'b00, 150, 2'b01);
 
         $display("=========================================================");
         $finish;
