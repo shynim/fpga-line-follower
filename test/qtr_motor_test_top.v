@@ -51,10 +51,12 @@ module qtr_motor_test_top (
         .byte_ready(rx_ready)
     );
 
-    // --- NEW: LIVE PID PARSER ---
+    // --- LIVE PID PARSER ---
     wire [15:0] live_kp;
     wire [15:0] live_ki;
     wire [15:0] live_kd;
+    wire [7:0] live_base_speed; // NEW
+    wire [7:0] live_max_speed;  // NEW
     
     pid_parser live_tune (
         .clk(clk),
@@ -63,7 +65,9 @@ module qtr_motor_test_top (
         .data_in(rx_data),
         .reg_p(live_kp),
         .reg_i(live_ki),
-        .reg_d(live_kd)
+        .reg_d(live_kd),
+        .reg_b(live_base_speed), // NEW
+        .reg_m(live_max_speed)   // NEW
     );
 
     // --- 5. RUN PID CALCULATOR ---
@@ -89,13 +93,16 @@ module qtr_motor_test_top (
     wire [1:0] dir_b;
 
     apply_pid #(
-        .BASE_SPEED(8'd100), 
-        .SHIFT(3'd6)
+        .SHIFT(3'd6) // BASE_SPEED was removed from here!
     ) apply_inst (
         .clk(clk),
         .rst(rst),
         .steer_ready(steer_ready),
         .steering_correction(steering_correction),
+        
+        .base_speed(live_base_speed), // NEW: Plug live base speed in
+        .max_speed(live_max_speed),   // NEW: Plug live max speed in
+        
         .speed_a(speed_a),
         .speed_b(speed_b),
         .dir_a(dir_a),

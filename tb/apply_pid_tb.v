@@ -6,21 +6,28 @@ module test;
     reg rst;
     reg steer_ready;
     reg signed [15:0] steering_correction;
+    
+    // NEW: Dynamic speed controls for the testbench!
+    reg [7:0] base_speed;
+    reg [7:0] max_speed;
 
     wire [7:0] speed_a;
     wire [7:0] speed_b;
     wire [1:0] dir_a;
     wire [1:0] dir_b;
 
-    // Instantiate the Mixer (Base Speed 100, Shift 6)
+    // Instantiate the Mixer (BASE_SPEED parameter removed!)
     apply_pid #(
-        .BASE_SPEED(8'd100),
         .SHIFT(3'd6)
     ) uut (
         .clk(clk),
         .rst(rst),
         .steer_ready(steer_ready),
         .steering_correction(steering_correction),
+        
+        .base_speed(base_speed), // Plug in live base speed
+        .max_speed(max_speed),   // Plug in live max speed
+        
         .speed_a(speed_a),
         .speed_b(speed_b),
         .dir_a(dir_a),
@@ -62,14 +69,18 @@ module test;
         rst = 1;
         steer_ready = 0;
         steering_correction = 0;
+        
+        // Initialize our dynamic speeds
+        base_speed = 8'd100;
+        max_speed = 8'd255;
 
         // Hold reset
         #100;
         rst = 0;
         #20;
 
-        $display("--- Starting Motor Mixer Test (NO REVERSE) ---");
-        $display("Base Speed = 100 | Shift = 6 (Divide by 64)");
+        $display("--- Starting Motor Mixer Test (Dynamic Speeds) ---");
+        $display("Initial Base Speed = 100 | Initial Max Speed = 255");
         $display("Dir Legend: 00=Stop, 01=Fwd");
         $display("---------------------------------------------------------");
 
@@ -89,17 +100,34 @@ module test;
 
         // TEST 4: Hard Right Turn (One wheel stops!)
         // Steer: +12800 (12800 / 64 = 200).
-        // Left math: 100 + 200 = 300 (Clamps to 255!)
-        // Right math: 100 - 200 = -100 (NEW LOGIC: Clamps to 0 Stop!)
+        // Left math: 100 + 200 = 300 (Clamps to max_speed 255!)
+        // Right math: 100 - 200 = -100 (Clamps to 0 Stop!)
         // Expected: Left 255 (Fwd 01), Right 0 (Stop 00)
         send_steer(16'sd12800);
 
         // TEST 5: Extreme Left Turn (Both wheels maxed/stopped!)
         // Steer: -32000 (-32000 / 64 = -500).
-        // Left math: 100 - 500 = -400 (NEW LOGIC: Clamps to 0 Stop!)
-        // Right math: 100 + 500 = 600 (Clamps to 255 Forward!)
+        // Left math: 100 - 500 = -400 (Clamps to 0 Stop!)
+        // Right math: 100 + 500 = 600 (Clamps to max_speed 255!)
         // Expected: Left 0 (Stop 00), Right 255 (Fwd 01)
         send_steer(-16'sd32000);
+
+        $display("---------------------------------------------------------");
+        $display("--- Testing Live Dynamic Speed Changes! ---");
+        
+        // TEST 6: Change the Max Speed limit live!
+        // We will do the exact same math as Test 4, but with a lower max limit.
+        @(posedge clk);
+        #1;
+        max_speed = 8'd150; 
+        
+        $display("Max Speed dynamically lowered to 150!");
+        
+        // Steer: +12800 (12800 / 64 = 200).
+        // Left math: 100 + 200 = 300 (Clamps to the NEW max_speed 150!)
+        // Right math: 100 - 200 = -100 (Clamps to 0 Stop!)
+        // Expected: Left 150 (Fwd 01), Right 0 (Stop 00)
+        send_steer(16'sd12800);
 
         $display("---------------------------------------------------------");
         $display("--- Motor Mixer Test Finished ---");
