@@ -11,7 +11,6 @@ module test();
 
     wire pwma, ain1, ain2;
     wire pwmb, bin1, bin2;
-    wire stby;
 
     // Instantiate the motor driver, overriding the prescaler for fast simulation
     driver #(
@@ -28,8 +27,7 @@ module test();
         .ain2(ain2),
         .pwmb(pwmb),
         .bin1(bin1),
-        .bin2(bin2),
-        .stby(stby)
+        .bin2(bin2)
     );
 
     // 27 MHz clock

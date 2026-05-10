@@ -1,4 +1,4 @@
-module qtr_speed_test_top (
+module qtr_motor_test_top (
     input wire clk,
     input wire btn1,              // Physical reset button
     input wire btn2,              // Physical calibration button
@@ -6,16 +6,16 @@ module qtr_speed_test_top (
     output wire uart_tx,          // To your computer
     input wire uart_rx,           // NEW: Receive data from your computer
     output wire [5:0] led,        // LED to show calibration state
-    output wire stby              // Hardware Kill Switch
+    output wire stby,              // Hardware Kill Switch
     
     // (Optional) Uncomment your motor pins here if you want to attach the driver!
-    // output wire pwma, ain1, ain2, pwmb, bin1, bin2
+    output wire pwma, ain1, ain2, pwmb, bin1, bin2
 );
 
     // ==========================================
     // HARDWARE KILL SWITCH: KEEP MOTORS OFF FOR DESK TESTING
     // ==========================================
-    assign stby = 1'b0; 
+    assign stby = 1'b1; 
 
     wire rst = ~btn1;
     wire calib_btn = ~btn2; 
@@ -107,6 +107,26 @@ module qtr_speed_test_top (
         .speed_b(speed_b),
         .dir_a(dir_a),
         .dir_b(dir_b)
+    );
+
+    // --- 7. PHYSICAL MOTOR DRIVER ---
+    // This translates your speed_a and speed_b into electrical PWM signals
+    
+    driver #(
+        .PRESCALER(8'd10) // Adjust this if your motors whine but don't spin
+    ) physical_motors (
+        .clk(clk),
+        .rst(rst),
+        .speed_a(speed_a),
+        .speed_b(speed_b),
+        .dir_a(dir_a),
+        .dir_b(dir_b),
+        .pwma(pwma),
+        .ain1(ain1),
+        .ain2(ain2),
+        .pwmb(pwmb),
+        .bin1(bin1),
+        .bin2(bin2)
     );
 
     // ========================================================

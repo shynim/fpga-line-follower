@@ -17,11 +17,8 @@ module driver #(
     output wire ain2,
     output wire pwmb,
     output wire bin1,
-    output wire bin2,
-    output wire stby
+    output wire bin2
 );
-
-    assign stby = 1'b1;
 
     assign ain1 = dir_a[0];
     assign ain2 = dir_a[1];
